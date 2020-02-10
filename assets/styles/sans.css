@@ -1,0 +1,79 @@
+/* @import '../fonts/inter/inter.css'; */
+
+@font-face {
+  font-family: 'Inter Var';
+  font-weight: 100 900;
+  font-display: swap;
+  /* font-style: oblique 0deg 10deg; */
+  src: url("/assets/fonts/inter/inter.var.woff2?v=3.11") format("woff2");
+}
+
+:root {
+
+  --sansXS: 12px;
+  --sansS: 13px;
+  --sansM: 15px;
+  --sansL: 18px;
+  --sansXL: 21px;
+  --sansXXL: 28px;
+}
+
+.sans {
+  font-family: 'Inter Var';
+  font-weight: 400;
+  font-size: var(--sansM);
+  line-height: 20px;
+}
+
+.sans .xs {
+  font-size: var(--sansXS);
+  line-height: 24px;
+}
+
+.sans .s {
+  font-size: var(--sansS);
+  line-height: 24px;
+}
+
+.sans .m {
+  font-size: var(--sansM);
+  line-height: 24px;
+}
+
+.sans .l {
+  font-size: var(--sansL);
+  line-height: 28px;
+}
+
+.sans .xl {
+  font-size: var(--sansXL);
+  line-height: 28px;
+}
+
+.sans .xxl {
+  font-size: var(--sansXXL);
+  line-height: 36px;
+}
+
+.sans h1 {
+  font-size: var(--sansXXL);
+}
+
+.sans h2 {
+  font-size: var(--sansXL);
+}
+
+.sans h3 {
+  font-size: var(--sansL);
+}
+
+.sans h4 {
+  font-size: var(--sansL);
+}
+
+@media( min-width: 600px  ) {
+  .content.sans {
+    font-size: var(--sansL);
+    line-height: 24px;
+  }
+}

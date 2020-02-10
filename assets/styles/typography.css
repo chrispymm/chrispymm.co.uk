@@ -1,0 +1,206 @@
+@import '../fonts/recursive/recursive.css';
+
+@font-face {
+  font-family: 'Inter Var';
+  font-weight: 100 900;
+  font-display: swap;
+  /* font-style: oblique 0deg 10deg; */
+  src: url("/assets/fonts/inter/inter.var.woff2?v=3.11") format("woff2");
+}
+
+:root {
+
+  --font-base: 'recursive', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-accent: 'Inter Var', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --font-base-xsmall:     0.765rem;   /* 13px */
+  --font-base-small:      0.882rem;   /* 15px */
+  --font-base-standard:   1rem;       /* 17px */
+  --font-base-large:      1.117rem;   /* 19px */
+  --font-base-xlarge:     1.353rem;   /* 23px */
+  --font-base-xxlarge:    1.765rem;   /* 30px */
+
+  --font-accent-xsmall:   0.706rem;   /* 12px */
+  --font-accent-small:    0.765rem;   /* 13px */
+  --font-accent-standard: 0.882rem;   /* 15px */
+  --font-accent-large:    1.06rem;    /* 18px */
+  --font-accent-xlarge:   1.235rem;   /* 21px */
+  --font-accent-xxlarge:  1.647rem;   /* 28px */
+
+  --font-accent-massive:         3rem;
+
+  --leading-small:        1.412rem;   /* 24px */
+  --leading-large:        1.647rem;   /* 28px */
+  --leading-xlarge:       1.882rem;   /* 32px */
+}
+
+/* ========================================================/
+*    BASE TYPOGRAPHY 
+* =========================================================*/
+
+html {
+  font-size: 106.25%; /* 17px;  16 / 17 * 100   */
+}
+
+html, body {
+  font-family: var(--font-base);
+  font-weight: 400;
+  line-height: var(--leading-small);
+}
+
+.text-xs {
+  font-size: var(--font-base-xsmall);
+  line-height: var(--leading-small);
+}
+
+.text-s {
+  font-size: var(--font-base-small);
+  line-height: var(--leading-small);
+}
+
+.text-m {
+  font-size: var(--font-base-standard);
+  line-height: var(--leading-small);
+}
+
+.text-l {
+  font-size: var(--font-base-large);
+  line-height: var(--leading-large);
+}
+
+.text-xl {
+  font-size: var(--font-base-xlarge);
+  line-height: var(--leading-large);
+}
+
+.text-xxl {
+  font-size: var(--font-base-xxlarge);
+  line-height: var(--leading-xlarge);
+}
+
+.font-body {
+  font-family: var(--font-base);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+.font-massive {
+  font-family: var(--font-accent);
+  font-size: var(--font-accent-massive);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  font-family: var(--font-accent);
+  font-weight: 800;
+}
+
+h1, .h1 {
+  font-size: var(--font-accent-xlarge);
+  line-height: var(--leadingM);
+}
+
+h2, .h2 {
+  font-size: var(--font-accent-large);
+  --flow-space: 2em;
+}
+
+h3, .h3 {
+  font-size: var(--font-accent-large);
+  --flow-space: 1.5em;
+}
+
+h4, .h4 {
+  --flow-space: 1.2em;
+  font-size: var(--font-accent-standard);
+  font-weight: 800;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: var(--font-base-small);
+  font-family: var(--font-base);
+  font-variation-settings: "MONO" 1;
+}
+
+ol, ul {
+  list-style-type: none; 
+  padding-left: 0.8rem;
+}
+
+ol {
+  counter-reset: list;
+}
+
+ol li::before,
+ul li::before {
+  font-family: 'Inter Var';
+  font-size: var(--font-accent-small);
+  font-weight: 700;
+  font-feature-settings: 'ss01' 1, 'tnum' 1;
+  padding-right: .8em;
+}
+
+ol li::before {
+  counter-increment: list;
+  line-height: var(--leading-large);
+  content: counter(list)".";
+}
+
+ul li::before {
+  font-size: var(--font-accent-large);
+  content: '\E08F ';
+}
+
+ol li,
+ul li {
+  font-size: var(--font-base-standard);
+}
+
+
+@media( min-width: 600px  ) {
+  body {
+    line-height: var(--leading-large);
+  }
+
+  .content {
+    font-size: var(--font-base-large);
+    line-height: var(--leading-large)
+  }
+
+  h1, .h1 {
+    font-size: var(--font-accent-xxlarge);
+    line-height: var(--leading-xlarge);
+  }
+  
+  h2, .h2 {
+    font-size: var(--font-accent-xlarge);
+    --flow-space: 2em;
+  }
+  
+  h3, .h3 {
+    font-size: var(--font-accent-large);
+    --flow-space: 1.5em;
+  }
+  
+  h4, .h4 {
+    --flow-space: 1.2em;
+    font-size: var(--font-accent-standard);
+    font-weight: 800;
+  }
+
+  ol, ul {
+    padding-left: 1rem;
+  }
+
+  ol li,
+  ul li {
+    font-size: var(--font-base-large);
+  } 
+  
+
+}

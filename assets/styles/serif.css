@@ -1,0 +1,57 @@
+@import '../fonts/charter/charter.css';
+
+:root {
+
+  --serifXS: 14px;
+  --serifS: 16px;
+  --serifM: 18px;
+  --serifL: 21px;
+  --serifXL: 24px;
+  --serifXXL: 32px;
+
+}
+
+.serif {
+  font-family: charterregular;
+  font-size: var(--serifM);
+  line-height: 24px;
+}
+
+.serif .xs {
+  font-size: var(--serifXS);
+  line-height: 24px;
+}
+
+.serif .s {
+  font-size: var(--serifS);
+  line-height: 24px;
+}
+
+.serif .m {
+  font-size: var(--serifM);
+  line-height: 24px;
+}
+
+.serif .l {
+  font-size: var(--serifL);
+  line-height: 28px;
+}
+
+.serif .xl {
+  font-size: var(--serifXL);
+  line-height: 28px;
+}
+
+.serif .xxl {
+  font-size: var(--serifXXL);
+  line-height: 36px;
+}
+
+
+@media( min-width: 600px  ) {
+
+  .content.serif {
+    font-size: var(--serifL);
+    line-height: 28px;
+  }
+}
