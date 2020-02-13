@@ -103,7 +103,7 @@ section.intro h1 {
 
 section.intro {
   margin-top: 2em;
-  margin-bottom: 7em;
+  margin-bottom: em;
 }
 
 section.intro p:first-of-type {
