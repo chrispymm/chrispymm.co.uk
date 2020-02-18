@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-permalink: false
+permalink: /about
 ---
 
 # About Me
