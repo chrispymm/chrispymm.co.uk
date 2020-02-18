@@ -7,7 +7,7 @@ permalink: /about/
 
 I'm a developer. I'm a designer. 
 
-I've been writing code since my late teens, I've also always had a love for design, and have a degree in Industrial Design.  Ultimately I woudl say I'm a problem solver. I enjoy solving problems, whether that be how to provide the best user experience on the frontend, or how to implement a feature in the backend (Ideally both).
+I've been writing code since my late teens. I've also always had a love for design, and have a degree in Industrial Design.  Ultimately I would say I'm a problem solver. I enjoy solving problems, whether that be how to provide the best user experience on the frontend, or how to implement a feature in the backend (Ideally both).
 
 In my time building things for the web I've developed a broad range of exprerience across the full spectrum; front end, back end, design, typography and sysadmin.  I've worked in an agency, I've been a freelancer, I've been the technical director of a web and branding agency, and I'm currently working for a charity developing their in-house Ruby on Rails app.
 

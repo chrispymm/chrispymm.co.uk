@@ -271,3 +271,15 @@ section.intro p:first-of-type {
   }
 
 }
+
+.margin-bottom-s {
+  margin-bottom: calc( var(--flow-space) )
+}
+
+.margin-bottom-m {
+  margin-bottom: calc( var(--flow-space) * 2 )
+}
+
+.margin-bottom-l {
+  margin-bottom: calc( var(--flow-space) * 3 )
+}
