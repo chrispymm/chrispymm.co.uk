@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-permalink: /about
+permalink: /about/
 ---
 
 # About Me
@@ -19,6 +19,8 @@ I have excellent skills in HTML, CSS, and Ruby on Rails.  I've also done a fair 
 ## About this site
 
 This site is a static site built with [eleventy](https://www.11ty.dev) and hosted on [netlify](https://www.netlify.com). It's still a work in progress. Code is hosted on [Gtihub](https://github.com/chrispymm/chrispymm.co.uk).
+
+
 
 
 
