@@ -9,7 +9,19 @@ layout: layouts/base.njk
   </div>
 </section>
 
+<section class="articles">
+  <h2 class="h1">Recent Articles</h2>
 
-
+  {%- for post in pagination.items -%}
+    <article class="offset-grid">
+      <p class="byline in-sidebar"><span class="short">{{ post.data.date | date: '%d.%m.%y' }}</span> <span class="long">{{ post.data.date | date: '%d %b %Y' }}</span></p>
+      <div class="in-content">
+        <h2><a href="{{ post.data.permalink }}">{{ post.data.title }}</a></h2>
+        {% excerpt post %}
+        <a href="{{ post.data.permalink }}" class="more">Read Article</a>
+      </div>
+    </article>
+  {%- endfor -%}
+</section>
 
 

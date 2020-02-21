@@ -1,9 +1,8 @@
 ---
+title: About Me
 layout: layouts/post.njk
 permalink: /about/
 ---
-
-# About Me
 
 I'm a developer. I'm a designer. 
 
