@@ -2,10 +2,6 @@
 title: Chris Pymm - Experienced Ruby-on-Rails Developer
 permalink: /
 layout: layouts/home.liquid
-pagination:
-  data: collections.post
-  size: 3
-  reverse: true
 ---
 
 # Hi
