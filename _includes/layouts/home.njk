@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="intro offset-grid ">
+  <div class="in-content flow ">
+    {{ content | safe }}
+    <a href="/about/" class="more">More</a> 
+  </div>
+</section>
+
+<section class="articles">
+  <h2 class="h1">Recent Articles</h2>
+  {% set posts = collections.post | reverse | limit(3) %}
+  {% include './postslist.njk' %}
+
+  <a href="/posts/" class="more in-content">All Articles</a>
+</section>
+
+

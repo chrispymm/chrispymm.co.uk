@@ -1,7 +1,10 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const moment = require("moment");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.setTemplateFormats([
     "md",
+    "njk",
     "jpg",
     "png",
     "css",
@@ -12,6 +15,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addShortcode('excerpt', post => extractExcerpt(post));
+
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true,
+  });
+
+  eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
+    return array.slice(0, limit);
+  });
+  
+  // date filter
+  eleventyConfig.addNunjucksFilter("date", function(date, format) {
+    return moment(date).format(format);
+  });
+
 
 };
 

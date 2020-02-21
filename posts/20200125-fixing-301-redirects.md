@@ -2,7 +2,6 @@
 title: Fixing 301 Redirects in Chrome
 permalink: posts/fixing-301-redirects-in-chrome/
 date: 2020-01-25
-tags: post
 ---
 
 I came across an issue this week where I accidentally added a 301 redirect to a page on a site I was working on. The issues was that Chrome aggressively caches 301 redirects, and as this had been added in error I needed to find a way to 'undo' the redirect.  It took me quite a while to find the solution to this, but in the end it was deceptively simple. 

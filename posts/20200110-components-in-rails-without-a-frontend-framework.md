@@ -2,14 +2,13 @@
 title: Refactoring a Rails App to use Components
 permalink: "posts/{{ title | slug }}/index.html"
 date: 2020-01-10
-tags: post
 ---
 
-Early Last year we wanted to overhaul the user interface of our app.  I was keen to improve the structure of the app and ensure that the code became more readable and maintainable - at that point the app was about 6 years old and contained some pretty gnarly views!
-
-What I wanted was all the benifits of a reusable component library, without having to rebuild the whole UI using a javascript framework.  The solution I found was [komponent](https://github.com/komposable/komponent).
+Early last year we wanted to overhaul the user interface of our app.  I was keen to improve the structure of the app and ensure that the code became more readable and maintainable - at that point the app was about 6 years old and some of the view code had become overly complex and hard to follow.
 
 <!--more-->
+
+What I wanted was all the benifits of a reusable component library, without having to rebuild the whole UI using a javascript framework.  The solution I found was [komponent](https://github.com/komposable/komponent).
 
 Komponent is a rails gem that provides a way of structuring and managing your front-end code in a component-based manner.  It uses Rails view_contexts and webpack configuration to allow you to create rails view components. 
 

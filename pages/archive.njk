@@ -1,0 +1,11 @@
+---
+title: Archive
+layout: layouts/base.njk
+permalink: /posts/
+---
+
+<section class="articles">
+  <h1 class="in-content">Articles</h1>
+  {% set posts = collections.post | reverse  %}
+  {% include 'layouts/postslist.njk' %}
+</section>

@@ -1,0 +1,10 @@
+{% for post in posts %}
+<article class="offset-grid">
+  <p class="byline in-sidebar"><span class="short">{{ post.data.date | date( 'DD.MM.YY' ) }}</span> <span class="long">{{ post.data.date | date('Do MMM YYYY') }}</span></p>
+  <div class="in-content">
+    <h2><a href="{{ post.url | url}}">{{ post.data.title }}</a></h2>
+    {% excerpt post %}
+    <a href="{{ post.url | url }}" class="more">Read Article</a>
+  </div>
+</article>
+{% endfor %}

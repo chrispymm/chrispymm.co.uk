@@ -2,7 +2,6 @@
 title: Creating a Rails Component using Komponent Part 2
 permalink: "posts/{{ title | slug }}/index.html"
 date: 2020-01-24
-tags: post
 ---
 
 Last time I walked through setting up a simple notice component that could display messages to a user, and communicate status using icons and color.  In this post we'll devlop that component further to add some interactivity with Stimulus JS.

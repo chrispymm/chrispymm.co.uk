@@ -2,7 +2,6 @@
 title: Creating a Rails Component using Komponent 
 permalink: "posts/{{ title | slug }}/index.html"
 date: 2020-01-17
-tags: post
 ---
 
 Following on from my last post about setting up a component based view system in Rails, I thought it would be good to share an example of building out a component in rails with the Komponent gem.

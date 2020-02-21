@@ -103,7 +103,7 @@ section.intro h1 {
 
 section.intro {
   margin-top: 2em;
-  margin-bottom: em;
+  margin-bottom: 5em;
 }
 
 section.intro p:first-of-type {
@@ -137,6 +137,10 @@ section.intro p:first-of-type {
 .grid.compare {
   grid-template-columns: repeat(3, 1fr);
 } */
+
+.articles {
+  margin-bottom: 5em;
+}
 
 .articles article {
   margin-top: 2em;

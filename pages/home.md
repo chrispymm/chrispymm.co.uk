@@ -1,7 +1,7 @@
 ---
 title: Chris Pymm - Experienced Ruby-on-Rails Developer
 permalink: /
-layout: layouts/home.liquid
+layout: layouts/home.njk
 ---
 
 # Hi
