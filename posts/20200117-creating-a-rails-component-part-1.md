@@ -1,6 +1,6 @@
 ---
-title: Creating a Rails Component using Komponent
-permalink: posts/creating-rails-component-with-komponent-part-1/
+title: Creating a Rails Component using Komponent 
+permalink: "posts/{{ title | slug }}/index.html"
 date: 2020-01-17
 tags: post
 ---

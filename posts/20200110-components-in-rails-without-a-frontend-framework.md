@@ -1,6 +1,6 @@
 ---
 title: Refactoring a Rails App to use Components
-permalink: posts/using-components-in-rails-without-a-frontend-framework/
+permalink: "posts/{{ title | slug }}/index.html"
 date: 2020-01-10
 tags: post
 ---
@@ -63,13 +63,3 @@ Excited to see [this tweet](https://twitter.com/dhh/status/1225504208465670147) 
 Also, the `ActionView::Component` mentioned above is not being upstreamed into Rails itself, it is being renamed to `ViewComponent` to reflect this.  See [this github issue thread](https://github.com/github/actionview-component/issues/206) for more details and discussion around these ideas of components in Rails.
 
 Part of me wonders whether the reason `ViewComponent` is not being upstreamed, is related to that tweet from dhh, and that there were similar ideas from both the basecamp and github teams.  We'll have to wait and see&hellip;  
-
-
-
-
-
-
-
-
-
-

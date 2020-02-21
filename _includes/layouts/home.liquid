@@ -1,9 +1,5 @@
 ---
 layout: layouts/base.njk
-pagination:
-  data: collections.post
-  size: 3
-  reverse: true
 ---
 
 <section class="intro offset-grid ">
@@ -15,17 +11,20 @@ pagination:
 
 <section class="articles">
   <h2 class="h1">Recent Articles</h2>
+  {% assign posts = collections.post | reverse  %}
 
-  {%- for post in pagination.items -%}
+  {%- for post in posts limit:3 -%}
     <article class="offset-grid">
       <p class="byline in-sidebar"><span class="short">{{ post.data.date | date: '%d.%m.%y' }}</span> <span class="long">{{ post.data.date | date: '%d %b %Y' }}</span></p>
       <div class="in-content">
-        <h2><a href="{{ post.data.permalink }}">{{ post.data.title }}</a></h2>
+        <h2><a href="{{ post.url | url}}">{{ post.data.title }}</a></h2>
         {% excerpt post %}
-        <a href="{{ post.data.permalink }}" class="more">Read Article</a>
+        <a href="{{ post.url | url }}" class="more">Read Article</a>
       </div>
     </article>
   {%- endfor -%}
+
+  <a href="/posts/" class="more in-content">All Articles</a>
 </section>
 
 
