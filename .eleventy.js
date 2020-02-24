@@ -1,18 +1,22 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 const moment = require("moment");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setTemplateFormats([
     "md",
     "njk",
-    "jpg",
-    "png",
     "css",
-    "woff",
-    "woff2" // css is not yet a recognized template extension in Eleventy
+    "js"
   ]);
 
+  eleventyConfig.addPassthroughCopy("assets/images");
+  eleventyConfig.addPassthroughCopy("assets/fonts");
+
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginRss);
+
 
   eleventyConfig.addShortcode('excerpt', post => extractExcerpt(post));
 
@@ -28,7 +32,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("date", function(date, format) {
     return moment(date).format(format);
   });
-
 
 };
 
