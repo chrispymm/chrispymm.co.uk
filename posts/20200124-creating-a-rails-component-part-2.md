@@ -174,8 +174,8 @@ Lastly, the `connect()` method is a special lifecycle callback method available 
 
 The `connect()` method is called when both of the following conditions are true:
 
-* its element is present in the document (i.e. a descendant of document.documentElement, the <html> element)
-* its identifier is present in the element’s data-controller attribute
+ - its element is present in the document (i.e. a descendant of document.documentElement, the <html> element)
+ - its identifier is present in the element’s data-controller attribute
 
 So, as soon as our message element appears in the DOM, Stimulus will call the `connect()` method in our controller.  Then we simply check to see if the component has the `notice-auto-dismiss` data attribute present, and if it does we set a timeout to call the `dismiss()` method after the provided timeout has elapsed.
 
