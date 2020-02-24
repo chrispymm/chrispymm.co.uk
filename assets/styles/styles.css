@@ -1,6 +1,4 @@
 :root {
-  /* --colWidth:           320px;
-  --breakPoint:         560px; */
   --max-width:          700px;
   --main-col-padding:   1rem;
   --profile-pic-width:  56px;
@@ -43,21 +41,17 @@ h4 a:hover, .h4 a:hover {
   color: rgba(var(--fg-color), .8);
 }
 
-main {
-  padding-left: 1em;
-  padding-right: 1em;
-}
+ main {
+  margin: 0 var(--main-col-padding);
+} 
 
 header {
   padding: 1em 1em 1em;
-  display: flex;
-  align-items: center;
   background: rgba( var(--sidebar-bg), 1 );
   margin-bottom: 2em;
 }
 
 header .profile {
-  justify-self: end;
   display: block;
   width: var(--profile-pic-width);
   margin-right: calc( var( --main-col-padding ) * 0.5 );
@@ -78,19 +72,9 @@ header .logo {
   align-self: center;
 }
 
-.container-grid {
-}
-
-.container-grid::before {
-
-}
-
-.offset-grid {
-
-}
-
-.site {
-  grid-area: content;
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
 section.intro h1 {
@@ -144,62 +128,63 @@ section.intro p:first-of-type {
 @media( min-width: 640px  ) {
   :root {
     --main-col-padding: 40px;
+    --sidebar-width: 120px;
   }
 
-  main {
-    padding: 0;
+  .container {
+    flex-direction: row;
   }
+
+  /* main {
+    margin: 0 var(--main-col-padding);
+  } */
 
   header {
-    background: transparent;
-    padding: 1em 0;
+    background-color: rgba( var(--sidebar-bg), 1);
+    padding: calc( var(--main-col-padding) / 2 );
     margin-bottom: 0;
+    align-content:stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+
+  header .profile {
+    margin: 0;
   }
 
   header .logo {
     color: var(--fg-color);
   }
 
-  .container-grid {
-    display: grid;
-    grid-template-columns: calc( var(--profile-pic-width) + ( var(--main-col-padding) ) ) minmax(0, auto);
-    grid-template-areas: "sidebar content"; 
-    grid-template-rows: 1fr;
-    min-height: 100vh;
-  }
-  
-  .container-grid::before {
-    content: "";
-    background-color: rgba( var(--sidebar-bg), 1);
-    grid-column: 1;
-    grid-row: 1;
-  }
-  
-  .offset-grid {
-    display: grid;
-    grid-template-columns: calc( var(--profile-pic-width) + ( var(--main-col-padding)  ) )  minmax(0, auto);
-    margin-left: calc( -1 * ( var(--profile-pic-width) + ( var(--main-col-padding) ) ) );
-    grid-template-areas: "sidebar content";
+  main.site {
+    max-width: var(--max-width);
+    margin: calc( var(--flow-space) * 3 ) var(--main-col-padding);
   }
 
-  .in-sidebar {
-    grid-area: sidebar;
-  }
-  
-  .in-content {
-    grid-area: content;
-    max-width: calc(var(--max-width) + var(--main-col-padding) + var(--main-col-padding));
-    padding-left: var(--main-col-padding);
+  .article {
+    position: relative;
   }
 
-  .articles > h2 {
-    padding-left: var(--main-col-padding);
+  article.post h1 {
+    padding-right: var(--main-col-padding);
   }
 
-  .byline {
+  .aside-left {
+    position: absolute;
     text-align: right;
+    display: inline-block;
     color: rgba( var(--sidebar-fg), 0.9);
-    margin-right: calc( var( --main-col-padding ) * 0.5 );
+    width: var(--sidebar-width);
+    margin-left: calc( (var(--sidebar-width) + var(--main-col-padding) + ( var(--main-col-padding) / 2) ) * -1 ); 
+  }
+
+  .aside-right {
+    position: absolute;
+    text-align: left;
+    display: inline-block;
+    width: var(--sidebar-width);
+    margin-right: calc( (var(--sidebar-width) + var(--main-col-padding) + ( var(--main-col-padding) / 2) ) * -1 ); 
   }
 
   .byline .short {
@@ -213,27 +198,17 @@ section.intro p:first-of-type {
 }
 
 @media( min-width: 1060px  ) {
-  
-
-  .container-grid {
-    display: grid;
-    grid-template-columns:  minmax(120px, calc( 50vw - ( var(--max-width) + var(--main-col-padding) + var(--main-col-padding) ) * 0.5 ) )  minmax(0, auto);
-    grid-template-areas: "sidebar content"; 
-    grid-template-rows: 1fr;
-    min-height: 100vh;
+  :root {
+    --sidebar-width: calc( 50vw - ( var(--max-width) + var(--main-col-padding) + var(--main-col-padding) ) * 0.5 );
   }
   
-  .container-grid::before {
-    content: "";
-    grid-column: 1;
-    grid-row: 1;
+  .header {
+    width: var(--sidebar-width);
   }
 
-  .offset-grid {
-    display: grid;
-    grid-template-columns:  minmax(120px, calc( 50vw - ( var(--max-width) + var(--main-col-padding) + var(--main-col-padding) ) * 0.5 ) )  minmax(0, auto);
-    margin-left: calc( -1 * ( 50vw - ( var(--max-width) + var(--main-col-padding) + var(--main-col-padding) ) * 0.5 )  );
-    grid-template-areas: "sidebar content";
+  .byline {
+    width: var(--sidebar-width);
+    margin-left: calc( ( var(--sidebar-width) + var(--main-col-padding) + ( var(--main-col-padding) / 2 ) ) * -1 );
   }
 
   .byline .short {

@@ -26,6 +26,7 @@ module.exports = function(eleventyConfig) {
     return new CleanCSS({}).minify(code).styles;
   });
 
+
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });

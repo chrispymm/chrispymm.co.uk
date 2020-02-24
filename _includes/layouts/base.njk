@@ -14,24 +14,18 @@
     <link rel="preload" href="/assets/fonts/recursive/recursive-variable-latin-basic.woff2" as="font" crossorigin />
   </head>
   <body class="">
-
-      <div class="container-grid">
-        <div class="site">
-
-          <header class="offset-grid">
-              <a href="/" class="profile">
-                <img src="/assets/images/me.jpg" alt="Profile Photo" />
-              </a>
-              <div class="content logo visually-hidden">
-                Chris Pymm
-              </div>
-          </header>
-
-          <main class="">
-              {{ content | safe }}
-          </main>
-
-        </div>
+      <div class="container">
+        <header class="header">
+          <a href="/" class="profile">
+            <img src="/assets/images/me.jpg" alt="Profile Photo" />
+          </a>
+          <div class="content logo visually-hidden">
+            Chris Pymm
+          </div>
+        </header>
+        <main class="site">
+          {{ content | safe }}
+        </main>
       </div>
   </body>
 </html>
