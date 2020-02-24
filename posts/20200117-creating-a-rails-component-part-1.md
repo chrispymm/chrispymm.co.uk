@@ -33,7 +33,7 @@ Before we start coding, lets think about what we know about our component. We kn
 At its simplest we need to be able to display a message from the user within our component. So lets write the partial for that.
 
 ```erb
-# /frontend/components/_notice.html
+<!-- /frontend/components/_notice.html -->
 <div class="notice">
   <%= @message %>
 </div>
@@ -65,7 +65,7 @@ Now if we try and call our component without a message it will raise an error.
 There are occasions where it is helpful to provide a little bit more than a one line message, so lets amend our component so we can provide a block containing more details.
 
 ```erb
-# /frontend/components/_notice.html
+<!-- /frontend/components/_notice.html -->
 <div class="notice">
   <% if block_given_to_component? %>
     <h4><%= @message %></h4>
@@ -117,7 +117,7 @@ end
 In the above code we've added a constant to hold our statuses and how they map to icons and colors (I'm using font-awesome for icons, and i'm using a class on the whole notice to handle the color change). We've also defined a couple of helper methods to anable quick access to the correct color and icon class depending on the status provide to the component.  Our component partial now looks like
 
 ```erb
-# /frontend/components/_notice.html
+<!-- /frontend/components/_notice.html -->
 <div class="notice #{ status_class }">
   <div class="notice__icon">
     <i class="fas <%= icon_class %>"></i>

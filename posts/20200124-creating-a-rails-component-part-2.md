@@ -10,7 +10,7 @@ Last time I walked through setting up a simple notice component that could displ
 
 At the end of the last post we had a notice component with the following code:
 ```erb
-# /frontend/components/_notice.html
+<!-- /frontend/components/_notice.html -->
 <div class="notice #{ status_class }">
   <div class="notice__icon">
     <i class="fas <%= icon_class %>"></i>
@@ -106,7 +106,7 @@ We've added a method for setting a class based on if we're displaying a flash me
 Now lets update the component partial to incorporate these changes too.
 
 ```erb
-# /frontend/components/_notice.html
+<!-- /frontend/components/_notice.html -->
 <%= content_tag(:div, class: component_class_string, data: data_attributes) do %>
   <div class="notice__icon">
     <i class="fas <%= icon_class %>"></i>
