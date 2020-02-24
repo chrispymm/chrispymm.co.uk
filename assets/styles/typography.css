@@ -157,6 +157,21 @@ pre[class*="language-"] {
   font-feature-settings: "ss01", "ss02", "ss07", "ss08", "ss10", "ss11";
 }
 
+blockquote {
+  font-size: var(--font-base-large);
+  font-variation-settings: "CASL" 1, "slnt" -9;
+  font-weight: 500;
+  padding: 0 1em;
+}
+
+blockquote > p:first-of-type::before {
+  content: '\201C';
+}
+
+blockquote > p:last-of-type::after {
+  content: '\201D';
+}
+
 ol, ul {
   list-style-type: none; 
   padding-left: 0.8rem;
@@ -231,6 +246,10 @@ ul li {
   ul li {
     font-size: var(--font-base-large);
   } 
+
+  blockquote {
+    padding: 0 2em;
+  }
   
 
 }
