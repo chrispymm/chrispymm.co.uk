@@ -1,9 +1,6 @@
-@import 'reset.css';
-@import 'typography.css';
-
 :root {
-  --colWidth:           320px;
-  --breakPoint:         560px;
+  /* --colWidth:           320px;
+  --breakPoint:         560px; */
   --max-width:          700px;
   --main-col-padding:   1rem;
   --profile-pic-width:  56px;
@@ -111,33 +108,6 @@ section.intro p:first-of-type {
   line-height: var(--leading-large);
 }
 
-/* .main-grid > * {
-  display: grid;
-  
-  grid-column: 1 / -1; 
-} */
-
-/* .grid {
-  display: block;
-  margin-bottom: 6rem; 
-}
-
-.grid.measure {  
-  grid-template-columns: 320px 700px;
-  grid-gap: 100px;
-}
-
-.grid.scale {  
-  max-width: 900px;
-  margin: 0px auto;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
-}
-
-.grid.compare {
-  grid-template-columns: repeat(3, 1fr);
-} */
-
 .articles {
   margin-bottom: 5em;
 }
@@ -146,7 +116,6 @@ section.intro p:first-of-type {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-
 
 .byline {
   font-size: var(--font-base-small);

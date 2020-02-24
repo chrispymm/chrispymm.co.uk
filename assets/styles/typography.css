@@ -65,6 +65,7 @@ html, body {
   font-family: var(--font-base);
   font-weight: 400;
   line-height: var(--leading-small);
+  
 }
 
 .text-xs {
@@ -119,8 +120,8 @@ h4, .h4 {
 }
 
 h1, .h1 {
-  font-size: var(--font-accent-xxlarge);
-  line-height: var(--leadingM);
+  font-size: var(--font-accent-xlarge);
+  line-height: var(--leading-large);
 }
 
 h2, .h2 {
@@ -141,9 +142,18 @@ h4, .h4 {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: var(--font-base-small);
+  font-size: var(--font-base-xsmall);
   font-family: var(--font-base);
   font-variation-settings: "MONO" 1;
+  /*
+  ss01: single story a
+  ss02: single story g
+  ss07: no-serif L and Z
+  ss08: simplified @
+  ss10: dotted zero
+  ss11: simplified 1
+  */
+  font-feature-settings: "ss01", "ss02", "ss07", "ss08", "ss10", "ss11";
 }
 
 ol, ul {
