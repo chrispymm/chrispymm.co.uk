@@ -142,7 +142,8 @@ h4, .h4 {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: var(--font-base-xsmall);
+  font-size: var(--font-base-small);
+  line-height: var(--leading-small);
   font-family: var(--font-base);
   font-variation-settings: "MONO" 1;
   /*
