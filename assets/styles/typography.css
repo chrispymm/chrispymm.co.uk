@@ -173,11 +173,11 @@ blockquote > p:last-of-type::after {
 }
 
 ol, ul {
-  list-style-type: none; 
-  padding-left: 0.8rem;
+  /* list-style-type: none;  */
+  padding-left: 1.2rem;
 }
 
-ol {
+/* ol {
   counter-reset: list;
 }
 
@@ -199,11 +199,12 @@ ol li::before {
 ul li::before {
   font-size: var(--font-accent-large);
   content: '\E08F ';
-}
+} */
 
 ol li,
 ul li {
   font-size: var(--font-base-standard);
+  margin-bottom: 0.5rem;
 }
 
 
@@ -239,13 +240,13 @@ ul li {
   }
 
   ol, ul {
-    padding-left: 1rem;
+    padding-left: 2rem;
   }
 
-  ol li,
+  /* ol li,
   ul li {
-    font-size: var(--font-base-large);
-  } 
+    /* font-size: var(--font-base-large); */
+  }  */
 
   blockquote {
     padding: 0 2em;
