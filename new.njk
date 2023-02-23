@@ -1,0 +1,32 @@
+---
+title: New Post
+layout: layouts/base
+permalink:
+  dynamic: "/new/"
+secure:
+  authorizeUsers: true
+---
+
+{% if user %}
+<form action="/.netlify/functions/new-post" method="POST">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" style="width: 99vw; height: 80vh; border: 1px solid #ccc">
+---
+title:
+---
+    </textarea>
+
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+{% else %}
+<p>You must login to view this page</p>
+<p>
+<form action="/.netlify/functions/auth-before">
+  <input type="hidden" name="securePath" value="/new/">
+  <button type="submit" name="provider" value="github">Login with GitHub</button>
+</form>
+</p>
+{% endif %}
+

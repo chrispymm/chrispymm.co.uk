@@ -10,13 +10,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^2.0.0-canary.14",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "eleventy-nbsp-filter": "^0.1.0"
+    "@octokit/core": "^3.6.0",
+    "clean-css": "^4.2.3",
+    "cookie": "^0.5.0",
+    "dotenv": "^16.0.1",
+    "eleventy-nbsp-filter": "^0.1.0",
+    "moment": "^2.24.0",
+    "nodejs-base64": "^2.0.0",
+    "simple-oauth2": "^4.3.0"
   },
   "dependencies": {
-    "clean-css": "^4.2.3",
-    "moment": "^2.24.0"
+    "front-matter": "^4.0.2"
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: Refactoring a Rails App to use Components
-permalink: "posts/{{ title | slug }}/index.html"
+permalink: "posts/{{ title | slug }}/"
 date: 2020-01-10
 ---
 

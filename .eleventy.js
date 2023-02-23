@@ -1,4 +1,5 @@
 
+const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const moment = require("moment");
 const CleanCSS = require("clean-css");
 
@@ -10,7 +11,6 @@ module.exports = function(eleventyConfig) {
     "md",
     "njk",
     "css",
-    "js"
   ]);
 
   eleventyConfig.addPassthroughCopy("assets/images");
@@ -38,6 +38,16 @@ module.exports = function(eleventyConfig) {
   // date filter
   eleventyConfig.addNunjucksFilter("date", function(date, format) {
     return moment(date).format(format);
+  });
+
+   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+    name: "dynamic", // The serverless function name from your permalink object
+    functionsDir: "./netlify/functions/",
+    copy: [
+      // files/directories that start with a dot
+      // are not bundled by default
+      { from: ".cache", to: "cache" }
+    ],
   });
 
 };
