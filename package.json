@@ -24,6 +24,7 @@
     "simple-oauth2": "^4.3.0"
   },
   "dependencies": {
+    "@octokit/rest": "^19.0.7",
     "front-matter": "^4.0.2"
   }
 }
