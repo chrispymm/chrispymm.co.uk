@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
     let formData = querystring.decode(event.body)
     const content = formData.content;
     const frontmatter = fm(content);
-    const date = new Intl.DateTimeFormat('en-GB').format(date).split('/').reverse().join('-');
+    const date = new Intl.DateTimeFormat('en-GB').format(new Date()).split('/').reverse().join('-');
     const title = frontmatter.attributes.title
     const fullTitle = `${date}-${frontmatter.attributes.title}`;
 
