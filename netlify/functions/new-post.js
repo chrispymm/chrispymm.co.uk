@@ -4,7 +4,7 @@ const cookie = require("cookie");
 const { tokens, getCookie } = require("./util/auth.js");
 const querystring = require('querystring');
 const { base64encode } = require('nodejs-base64');
-const frontmatter = require('front-matter');
+const fm = require('front-matter');
 
 exports.handler = async (event, context) => {
   const [owner, repo] = process.env.GITHUB_REPO.split('/');
@@ -32,10 +32,10 @@ exports.handler = async (event, context) => {
 
     let formData = querystring.decode(event.body)
     const content = formData.content;
-    const frontmatter = frontmatter(content);
+    const frontmatter = fm(content);
     const date = new Intl.DateTimeFormat('en-GB').format(date).split('/').reverse().join('-');
-    const title = datefrontmatter.attributes.title
-    const fullTitle = `${date}-${datefrontmatter.attributes.title}`;
+    const title = frontmatter.attributes.title
+    const fullTitle = `${date}-${frontmatter.attributes.title}`;
 
     if(!title) {
       return {
