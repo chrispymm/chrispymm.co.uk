@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
       repo: repo,
       path: path,
       message: `Add Post: ${title}`,
-      content: base64encode(newContent),
+      content: base64encode(content),
     });
 
     if(response.status < 300) {
