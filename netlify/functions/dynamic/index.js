@@ -68,7 +68,7 @@ async function handler(event) {
         body: ''
       };
     }
-    
+
     console.log({'SECURE': page.data.secure })
 
     // Secure pages
@@ -85,7 +85,7 @@ async function handler(event) {
         body: ''
       };
     }
-    
+
     // unauthorized
     if(user && page.data.secure?.authorizeUsers) {
       if( !authorizedUsers.includes(user.login)) {
