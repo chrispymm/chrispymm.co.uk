@@ -1,8 +1,6 @@
-
 const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const moment = require("moment");
 const CleanCSS = require("clean-css");
-
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
