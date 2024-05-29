@@ -6,6 +6,7 @@
     <?= $page->text()->kirbytext() ?>
 </section>
 
+<? if($posts): ?>
 <section class="flow">
     <h2>Articles</h2>
     <ul>
@@ -17,6 +18,7 @@
     </ul>
     <a href="/blog">More articles <span aria-hidden="true">&rarr;</span></a>
 </section>
+<? endif ?>
 
 <section class="latest flow">
     <h2>Currently</h2>
