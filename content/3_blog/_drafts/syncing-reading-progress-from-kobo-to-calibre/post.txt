@@ -1,0 +1,43 @@
+Title: Syncing reading progress from Kobo to Calibre
+
+----
+
+Text:
+
+While updating this site I wanted to add my reading history into the library section.  To do this required me to find out when I completed reading my books on my Kobo eReader.  This information wasn't available in the UI, but I figured it must be accessible somehow.  
+
+It turns out it is possible to get this information using Calibre and a plugin called Kobo Utilities.  This is not super well documented, and the solution is buried in forum answers, so I thought I'd document it.
+
+
+## Install the Kobo Utilities plugin
+
+
+## Add custom columns
+There are 4 bits of information you can sync:
+* Current read location
+* Read percentage
+* Rating
+* Last read date
+
+To access these you need to set up custom columns in Calibre.
+
+koboreadloc, Text, column shown in tag browser
+koboreadpct, Integers
+koborating, Ratings, shown with stars, or Integers
+kobolastread, Date
+
+## Configure the plugin
+Once you've added the columns you want.  Go to the Kobo utilities plugin 'Configure plugin' this will allow you to connect the fields up with a profile.
+
+The plugin has 2 actions for this data: 'store' and 'restore'.  Store pulls the information from your device to the Calibre library, and 'restore' pushes data from Calibre to the Kobo device.
+
+The plugin allows you to configure a couple of options around how you want the syncing to occur.  I selected 'store on connect' and 'only if newer'.
+
+
+
+
+(link: https://www.mobileread.com/forums/showthread.php?t=215339 text: Original source)
+
+----
+
+Uuid: jHrAVm9e9I59S03m

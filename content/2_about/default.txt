@@ -1,0 +1,15 @@
+Title: About
+
+----
+
+Text:
+
+I have a background in design, and have been building stuff on the web for nearly 20 years now.  Over that time I've worked in a variety of roles across the whole stack.  I started as a web designer after a university degree in industrial design, and went on to be a frontend developer then progressed into PHP and then discovered Ruby on Rails.
+
+I worked for web development agencies, been a freelancer, co-run a (link: https://www.adozeneggs.co.uk/ text: web and branding agency) and am currently working as a frontend developer for the Ministry of Justice working on (link: https://moj-forms.service.justice.gov.uk/ text: MoJ Forms)
+
+I'm passionate about the web - semantic HTML, urls (that don't change), accessibility, progressive enhancement and performance.  I'm happiest working on problems across the whole stack, understanding the whole problem and developing the best solution.
+
+----
+
+Uuid: SUfRHkVB7IcPmUZr

@@ -1,0 +1,24 @@
+Title: Ruby's comparable module
+
+----
+
+Text:
+
+Our app
+
+
+```ruby
+class Component
+  include Comparable
+  
+  def <=>(other)
+    return nil unless other.is_a?(Component)
+    return 0 unless order && other.order
+
+    order <=> other.order
+  end
+```
+
+----
+
+Uuid: bVNN3z0IVkJz73Mk

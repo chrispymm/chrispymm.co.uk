@@ -1,0 +1,36 @@
+title: Brew
+
+num: '{{ page.brewed.toDate("YmdHi") }}'
+
+create:
+  title: "{{ page.coffee.toPage.title }}"
+  slug: "{{ page.coffee.slug }}"
+  status: listed
+  redirect: false
+  fields: 
+    - coffee
+    - method
+    - brewed
+
+
+
+fields:
+  coffee:
+    type: select
+    multiple: false
+    options: 
+      type: query
+      query: site.index.filterBy('template', 'roast').flip
+      text: "{{ page.title }} - {{ page.roaster.toPage.title }}"
+      value: "  - {{ page.uuid }}"
+  method:
+    type: radio
+    options:
+      - French Press
+      - Pourover
+  brewed:
+    type: date
+    time: true
+    default: now
+
+  

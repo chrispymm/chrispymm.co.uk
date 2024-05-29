@@ -1,0 +1,17 @@
+Title: Workshop
+
+----
+
+Website: https://workshopcoffee.com
+
+----
+
+Logo: - file://EIgLReY3RwqytWQa
+
+----
+
+Debug: 
+
+----
+
+Uuid: CKEilP7FglXw7wkf

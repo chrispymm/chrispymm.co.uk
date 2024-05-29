@@ -1,0 +1,28 @@
+title: Roaster
+
+create:
+  fields:
+    - website
+  redirect: false
+  status: listed
+
+sections:
+  content:
+    type: fields
+    fields:
+      website:
+        type: link
+        options: 
+          - url
+        label: Website
+      logo:
+        type: files
+        multiple: false
+        upload: true
+        image:
+          ratio: 1200/628
+          back: white
+      debug:
+        type: textarea
+        label: Debug
+        

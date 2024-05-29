@@ -1,0 +1,30 @@
+# Each page blueprint must have a title, the title may be different from the file name
+title: Post
+
+# Sorting number scheme that is applied when page status is changed to `listed`
+# More about page sorting: https://getkirby.com/docs/reference/panel/blueprints/page#sorting
+num: date
+
+# Each page can have an icon that is shown in page listings when no preview image is available.
+icon: 📖
+
+# Custom descriptions for each page status depending on use case
+# More about page status: https://getkirby.com/docs/reference/panel/blueprints/page#statuses
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      content:
+        type: fields
+        fields:
+          text:
+            type: markdown
+            label: Text
+            size: large
+  sidebar:
+    width: 1/3
+    sections:
+
+
+

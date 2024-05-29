@@ -1,0 +1,26 @@
+title: Library
+
+sections:
+  books:
+    type: pages
+    template: book
+    layout: table
+    sortBy: completion_date desc
+    text: false
+    info: false
+    columns:
+      title:
+        width: 5/12
+        type: html
+        value: "<a href=\"{{ page.panel.url }}\">{{ page.title}}</a>"
+        mobile: true
+      author: 
+        width: 3/12
+      completion_date: 
+        label: Completed
+        width: 2/12
+      rating: 
+        width: 2/12
+        
+
+

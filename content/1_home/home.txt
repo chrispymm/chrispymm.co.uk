@@ -1,0 +1,13 @@
+Title: 👋 Hello, I'm Chris
+
+----
+
+Text:
+
+I'm a full-stack Ruby on Rails developer specialising in semantic HTML, progressive-enhancement & accessibility.  I currently work for the Ministry of Justice on MoJ Forms - a no-code form building platform.
+
+This is my personal site where I'll share occasional articles, thoughts, and whatever else takes my fancy.  It's also where I keep a record of (link: /@/page/0v3QhkqhINJaz3lT text: delicious coffees I've drunk) and (link: /@/page/gImkJXmrskGm1Ei2 text: books I've been reading).
+
+----
+
+Uuid: WRscZOEXQTUF9HTi

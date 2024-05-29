@@ -1,0 +1,13 @@
+title: Site
+
+sections:
+  pages:
+    type: pages
+
+  brews:
+    type: pages
+    parent: site.find('brews')
+    template: brew
+    status: all
+
+    

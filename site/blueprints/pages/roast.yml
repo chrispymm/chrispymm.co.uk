@@ -1,0 +1,48 @@
+title: Roasts
+
+create:
+  status: listed
+
+
+columns:
+  left:
+    width: 1/3
+    sections:
+      info:
+        type: fields
+        fields:
+          roaster:
+            type: pages
+            multiple: false
+            query: site.index.filterBy('template', 'roaster')
+            subpages: true
+            label: Roaster
+          origin:
+            type: text
+            label: Origin
+          process:
+            type: text
+            label: Process
+          cultivar:
+            type: text
+            label: Cultivar
+          tasting_notes:
+            type: text
+            label: Tasting Notes
+  right:
+    width: 2/3
+    sections:
+      comments:
+        type: fields
+        fields:
+          comments:
+            type: textarea
+            label: Comments
+          rating: 
+            type: range
+            label: Rating
+            step: 0.5
+            min: 0
+            max: 5
+
+

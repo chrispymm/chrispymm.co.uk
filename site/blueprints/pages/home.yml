@@ -1,0 +1,10 @@
+title: Home
+
+sections:
+  content:
+    type: fields
+    fields:
+      text: 
+        type: markdown
+        label: Text
+        size: large

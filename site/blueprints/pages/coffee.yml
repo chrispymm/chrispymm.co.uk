@@ -1,0 +1,30 @@
+title: Coffee
+
+columns:
+  left:
+    width: 2/3
+    sections:
+      coffee:
+        type: pages
+        parent: page.find('beans')
+        layout: list
+        template: roast
+        sortBy: num
+        flip: true
+        image: 
+          query: page.roaster.toPage.logo.toFile
+          back: white
+
+  right:
+    width: 1/3
+    sections:
+      roasters:
+        type: pages
+        parent: page.find('roasters')
+        layout: list
+        sortBy: title
+        image:
+          back: white
+        templates: roaster
+        info: "{{page.website}}"
+
