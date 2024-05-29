@@ -1,4 +1,4 @@
-<?
+<?php
 
 function fetch_og_image(string $url, string $filename) {
     if(empty($url)) return;
