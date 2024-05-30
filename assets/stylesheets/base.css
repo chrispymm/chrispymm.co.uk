@@ -97,6 +97,31 @@
     padding-inline-start: 1em;
   }
 
+  ul ::marker {
+    color: var(--primary);
+  }
+
+  table {
+    border-collapse: collapse;
+    font-size: var(--text-size-0);
+    width: 100%;
+  }
+
+  th {
+    border-bottom: 1px solid var(--primary);
+  }
+
+  td,
+  th {
+    padding-top: var(--space-3xs);
+    padding-bottom: var(--space-3xs);
+  }
+
+  td + td,
+  th + th {
+    padding-left: var(--space-s);
+  }
+
   blockquote {
     padding-inline-start: 1em;
     border-inline-start: 0.3em solid;

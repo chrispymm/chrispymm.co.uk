@@ -1,7 +1,7 @@
 
 <?php snippet('layout', ['title' => $page->title()], slots: true) ?>
 
-    <article>
+    <article class="flow">
         <?= $page->text()->kirbytext() ?>
     </article>
 
