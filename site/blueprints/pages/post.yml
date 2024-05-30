@@ -25,6 +25,12 @@ columns:
   sidebar:
     width: 1/3
     sections:
+      meta:
+        type: fields
+        fields:
+          date:
+            type: date
+            label: Publish date
 
 
 
