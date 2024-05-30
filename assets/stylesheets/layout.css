@@ -34,6 +34,25 @@
     justify-content: space-between;
   }
 
+  .logo {
+    position: relative;
+    font-family: var(--font-heading);
+    font-size: var(--text-size-4);
+    font-weight: 1000;
+    letter-spacing: -0.06em;
+    text-decoration: none;
+  }
+
+  .logo > :first-child {
+    position: relative;
+    z-index: 10;
+    color: var(--primary);
+  }
+  .logo > :last-child {
+    position: relative;
+    z-index: 5;
+  }
+
   .masthead {
     --center-max-width: 64rem;
   }

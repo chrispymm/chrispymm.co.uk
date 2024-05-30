@@ -12,13 +12,47 @@
     font-weight: 400;
   }
 
+  @font-face {
+    font-family: "Recursive";
+    src: url("/assets/fonts/recursive/recursive-variable-latin-basic.woff2")
+      format("woff2-variations");
+    font-weight: 300 1000;
+    unicode-range: U+0020-007F, U+00A3, U+00A9, U+20AC; /* Latin Basic plus £, €, &copy; */
+  }
+
+  @font-face {
+    font-family: "Recursive";
+    src: url("/assets/fonts/recursive/recursive-variable-latin-supplement.woff2")
+      format("woff2-variations");
+    font-weight: 300 1000;
+    unicode-range: U+A0-A2, U+A4-A8, U+AA-FF; /* https://jrgraphix.net/r/Unicode/00A0-00FF minus £, &copy */
+  }
+
+  @font-face {
+    font-family: "Recursive";
+    src: url("/assets/fonts/recursive/recursive-variable-latin-extended-a.woff2")
+      format("woff2-variations");
+    font-weight: 300 1000;
+    unicode-range: U+0100-017F; /* https://jrgraphix.net/r/Unicode/0100-017F */
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-weight: 100 900;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/inter/Inter-Var-Roman-Latin.woff2?v=3.11")
+      format("woff2");
+  }
+
   :root {
     --bg: #fff;
     --fg: #000;
     --primary: rgb(253, 100, 66);
-
-    /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-    --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
+    --font-body: "Recursive";
+    --font-heading: "Inter"
+      /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+      --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
     --text-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
     --text-size-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
     --text-size-1: clamp(1.35rem, 1.2761rem + 0.3696vi, 1.5625rem);
@@ -65,17 +99,18 @@
   }
 
   body {
-    font-family: "Bergen Mono", monospace;
+    font-family: var(--font-body);
     color: var(--fg);
     background: var(--bg);
     font-size: var(--text-size-0);
+    font-weight: 400;
     line-height: 1.6;
   }
 
   h1,
   h2,
   h3 {
-    font-family: "Bergen Mono", monospace;
+    font-family: var(--font-heading);
     font-weight: 800;
     line-height: 1.05;
   }
@@ -126,6 +161,10 @@
     padding-inline-start: 1em;
     border-inline-start: 0.3em solid;
     font-size: var(--text-size-1);
+    font-variation-settings:
+      "CASL" 1,
+      "slnt" -9;
+    font-weight: 500;
   }
 
   a {
@@ -183,6 +222,20 @@
 
   th {
     text-align: left;
+  }
+
+  pre,
+  code {
+    font-variation-settings: "MONO" 1;
+    /*
+  ss01: single story a
+  ss02: single story g
+  ss07: no-serif L and Z
+  ss08: simplified @
+  ss10: dotted zero
+  ss11: simplified 1
+  */
+    font-feature-settings: "ss01", "ss02", "ss07", "ss08", "ss10", "ss11";
   }
 
   pre.hljs {
