@@ -7,7 +7,7 @@ return function($page, $pages, $site, $kirby) {
 
     $latestBrew = $site->index()->filterBy('template', 'brew')->listed()->last();
 
-    $latestBook = $site->index()->filterBy('template', 'book')->listed()->last();
+    $latestBook = $site->index()->filterBy('template', 'book')->listed()->filterBy('completion_date', '==', '')->last();
 
     return A::merge($siteController , compact('posts', 'latestBrew', 'latestBook'));
 };

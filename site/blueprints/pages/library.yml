@@ -5,7 +5,7 @@ sections:
     type: pages
     template: book
     layout: table
-    sortBy: completion_date desc
+    sortBy: sortIndex desc
     text: false
     info: false
     columns:
