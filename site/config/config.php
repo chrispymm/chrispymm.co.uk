@@ -5,6 +5,7 @@ use Scriptotek\GoogleBooks\GoogleBooks;
 
 return [
     'debug'  => true,
+    'url' => '/',
   's1syphos.highlight' => [
     'class' => 'hljs',
     'languages' => ['html', 'js', 'css', 'ruby', 'erb']
