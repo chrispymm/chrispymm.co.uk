@@ -10,7 +10,7 @@
                     <img src="<?= $image->url() ?>" alt="">
                 <?php endif ?>
             </figure>
-            <h2 class="font-size-0"><a href="<?=$book->url()?>"><?=$book->title()?></a></h2>
+            <h2 class="font-size-0"><?=$book->title()?></h2>
             <p class="font-size--1"><?= $book->author() ?></p>
             <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
         </article>
