@@ -12,7 +12,7 @@
             </figure>
             <h2 class="font-size-0"><a href="<?=$book->url()?>"><?=$book->title()?></a></h2>
             <p class="font-size--1"><?= $book->author() ?></p>
-            <? snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+            <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
         </article>
     <?php endforeach ?>
 </div>

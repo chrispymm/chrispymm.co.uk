@@ -1,19 +1,19 @@
 <html lang="en">
     <head>
-        <? snippet('head') ?>
+        <?php snippet('head') ?>
     </head>
     <body>
 
 
-        <? snippet('header') ?>
+        <?php snippet('header') ?>
 
         <main id="main" tabindex="-1">
             <section id="content" class="center <?= $page->template() ?>">
-<? if($title): ?>
+<?php if($title): ?>
                 <header class="page-title center">
                     <h1><?= $title ?></h1>
                 </header>
-<?endif;?>
+<?php endif;?>
                 <?= $slot ?>
             </section>
         </main>

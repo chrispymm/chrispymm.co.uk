@@ -10,11 +10,11 @@
 <section class="flow">
     <h2>Articles</h2>
     <ul>
-    <? foreach ($posts as $post): ?>
+    <?php foreach ($posts as $post): ?>
         <li>
             <a href="<?= $post->url() ?>"><?= $post->title() ?></a>
         </li>
-    <? endforeach ?>
+    <?php endforeach ?>
     </ul>
     <a href="/blog">More articles <span aria-hidden="true">&rarr;</span></a>
 </section>
@@ -26,7 +26,7 @@
         <div>
             <h3>Drinking</h3>
             <!-- <p><?= $latestBrew->method() ?></p> -->
-            <? snippet('coffee-list', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
+            <?php snippet('coffee-list', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
         </div>
         <div>
             <h3>Reading</h3>
