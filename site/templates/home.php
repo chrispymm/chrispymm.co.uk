@@ -28,11 +28,16 @@
             <!-- <p><?= $latestBrew->method() ?></p> -->
             <?php snippet('coffee-list', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
         </div>
-        <div>
+        <div class="latest-book">
             <h3>Reading</h3>
-            <div class="flow" style="--flow-space:0.6rem">
-                <h2 class="font-size-0"><a href="/library"><?= $latestBook->title() ?></a></h2>
-                <p class="font-size--1"><?= $latestBook->author() ?></p>
+            <div class="cluster">
+                <?php if($image = $latestBook->cover()->toFile()): ?>
+                    <img src="<?= $image->url() ?>" alt="" width="40px">
+                <?php endif ?>
+                <div class="flow" style="--flow-space:0.6rem">
+                    <h4 class="font-size-0"><a href="/library"><?= $latestBook->title() ?></a></h4>
+                    <p class="font-size--1"><?= $latestBook->author() ?></p>
+                </div>
             </div>
         </div>
     </div>
