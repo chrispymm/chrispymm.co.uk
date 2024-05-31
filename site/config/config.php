@@ -11,6 +11,13 @@ return [
     'languages' => ['html', 'js', 'css', 'ruby', 'erb']
   ],
   'hooks' => [
+      'page.changeStatus:after' => function ($newPage,$oldPage) {
+          if($newPage->template()->name() == 'roast') {
+            if (!$oldPage->isListed()) {
+                $newPage->changeSort(0);
+            }
+          }
+      },
       'page.create:after' => function($page) {
           if($page->intendedTemplate()->name() == 'roaster') {
               $url = $page->website(); 

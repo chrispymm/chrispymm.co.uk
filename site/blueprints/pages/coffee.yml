@@ -9,11 +9,9 @@ columns:
         parent: page.find('beans')
         layout: list
         template: roast
-        sortBy: num
-        flip: true
+        sortable: true
         image: 
           query: page.roaster.toPage.logo.toFile
-          back: white
 
   right:
     width: 1/3
