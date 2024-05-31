@@ -22,13 +22,13 @@
 
 <section class="latest flow">
     <h2>Currently</h2>
-    <div>
-        <div>
+    <div class="grid">
+        <div class="flow latest__card">
             <h3>Drinking</h3>
             <!-- <p><?= $latestBrew->method() ?></p> -->
             <?php snippet('coffee-list', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
         </div>
-        <div class="latest-book">
+        <div class="flow latest__card">
             <h3>Reading</h3>
             <div class="cluster">
                 <?php if($image = $latestBook->cover()->toFile()): ?>

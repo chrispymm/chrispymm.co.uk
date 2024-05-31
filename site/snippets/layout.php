@@ -8,14 +8,14 @@
         <?php snippet('header') ?>
 
         <main id="main" tabindex="-1">
-            <section id="content" class="center <?= $page->template() ?>">
+            <div id="content" class="center <?= $page->template() ?>">
 <?php if($title): ?>
                 <header class="page-title center">
                     <h1><?= $title ?></h1>
                 </header>
 <?php endif;?>
                 <?= $slot ?>
-            </section>
+            </div>
         </main>
 
     <footer>
