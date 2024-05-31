@@ -34,6 +34,41 @@
     justify-content: space-between;
   }
 
+  .skip-link {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    padding: var(--space-3xs) var(--space-2xs);
+  }
+
+  .skip-link:focus {
+    position: absolute !important;
+    width: auto !important;
+    height: auto !important;
+    left: var(--space-xs) !important;
+    right: var(--space-xs) !important;
+    top: var(--space-xs) !important;
+    overflow: visible !important;
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+    white-space: inherit !important;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    z-index: 999;
+  }
+
   .logo {
     position: relative;
     font-family: var(--font-heading);
@@ -72,10 +107,6 @@
     --grid-cell-min-width: 200px;
     --grid-cell-max-width: 300px;
     row-gap: var(--space-s-l);
-  }
-
-  .book > figure {
-    /* max-width: 200px; */
   }
 
   .book img {

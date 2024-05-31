@@ -3,7 +3,7 @@
         <?php snippet('head') ?>
     </head>
     <body>
-
+        <a href="#content" class="skip-link">Skip to main content</a>
 
         <?php snippet('header') ?>
 
