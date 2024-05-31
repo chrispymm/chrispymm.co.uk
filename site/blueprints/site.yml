@@ -8,6 +8,7 @@ sections:
     type: pages
     parent: site.find('brews')
     template: brew
+    sortBy: brewed desc 
     status: all
 
     
