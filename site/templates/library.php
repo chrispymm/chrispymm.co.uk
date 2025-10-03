@@ -4,8 +4,11 @@
 <div class="flow">
 <div class="center">
         <nav aria-labelledby="year-nav-title">
-            <h2 id="year-nav-title" class="font-size-2">Year</h2>
+            <h2 id="year-nav-title" class="font-size-1">Year</h2>
             <ul role="list" class="cluster">
+            <?php if( count($years)): ?>
+                <li><a <?= !$currentYear ? 'aria-current="true"' : '' ?> href="/library/">All</a></li>
+            <?php endif ?>
             <?php foreach($years as $year): ?>
                 <li><a <?= $currentYear == $year ? 'aria-current="true"' : '' ?> href="/library/<?= $year ?>"><?= $year ?></a></li>
             <?php endforeach ?>
@@ -16,7 +19,6 @@
     <div class="books grid">
     <?php foreach($books as $book): ?>
         <article class="book flow" style="--flow-space: 0.6rem;">
-            <figure>
                 <?php if($image = $book->cover()->toFile()): ?>
                     <picture>
 
@@ -30,7 +32,6 @@
                         srcset="<?= $image->srcset('book')?>"
                     >
                 <?php endif ?>
-            </figure>
             <h2 class="font-size-0"><?=$book->title()?></h2>
             <p class="font-size--1"><?= $book->author() ?></p>
             <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>

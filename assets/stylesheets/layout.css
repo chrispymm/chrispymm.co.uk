@@ -151,6 +151,11 @@
     }
   }
 
+  nav[aria-labelledby="year-nav-title"] ul {
+   margin-top: 0;
+        margin-bottom: var(--space-m)
+  }
+
   .articles > * + * {
     margin-block-start: var(--space-s-l);
   }

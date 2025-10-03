@@ -52,7 +52,7 @@
     --font-body: "Recursive";
     --font-heading: "Inter"
       /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-      --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
+    --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
     --text-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
     --text-size-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
     --text-size-1: clamp(1.35rem, 1.2761rem + 0.3696vi, 1.5625rem);
@@ -256,4 +256,21 @@
     outline: 2px solid #f6f6f6;
     box-shadow: 0 0 0 4px #e6e6e6;
   }
+
+  nav a {
+    padding: 0 var(--space-3xs)
+  }
+
+  nav a[aria-current] {
+    background-color: var(--primary);
+    border: 3px solid var(--primary);
+    text-decoration: none;
+  }
+
+@view-transition {
+  navigation: auto;
+}
+
+    
+
 }
