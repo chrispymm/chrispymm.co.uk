@@ -23,6 +23,7 @@ return function($page, $pages, $site, $kirby, $year) {
     } else {
         $books = $page->children()
             ->listed()
+            ->filterBy('completion_date', '!=', '')
             ->sortBy('sortIndex', 'desc');
     }
     // $books = $books->paginate(20);
