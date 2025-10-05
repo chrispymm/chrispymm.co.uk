@@ -5,6 +5,11 @@ use Scriptotek\GoogleBooks\GoogleBooks;
 
 return [
     'debug'  => true,
+    'api' => [
+        'basicAuth' => true,
+        'allowInsecure' => true
+
+    ],
     'url' => '/',
   's1syphos.highlight' => [
     'class' => 'hljs',
