@@ -10,8 +10,7 @@ $json['data']  = [];
 foreach($data as $book) {
 
   $json['data'][] = array(
-    'id' => (string)$book->id(),
-    'title' => (string)$book->title(),
+    (string)$book->id() => (string)$book->title(),
   );
 
 }
