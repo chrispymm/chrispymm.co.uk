@@ -10,7 +10,7 @@ $json['data']  = [];
 foreach($data as $book) {
 
   $json['data'][] = array(
-    str_replace( '/', '+', (string)$book->id()) => (string)$book->title(),
+     (string)$book->title() => str_replace( '/', '+', (string)$book->id()),
   );
 
 }
