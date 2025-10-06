@@ -4,8 +4,6 @@ $data = $pages->find('library')->children()->listed()->filterBy('completion_date
 $json = [];
 
 $json['data']  = [];
-// $json['pages'] = $data->pagination()->pages();
-// $json['page']  = $data->pagination()->page();
 
 foreach($data as $book) {
 
