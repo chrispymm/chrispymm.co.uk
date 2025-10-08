@@ -8,7 +8,7 @@ $json['data']  = [];
 foreach($data as $roaster) {
 
   $json['data'][] = array(
-    'id' => (string)$roaster->uuid(),
+    'id' => (string)$roaster->id(),
     'title' => (string)$roaster->title(),
   );
 
