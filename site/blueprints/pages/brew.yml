@@ -26,8 +26,9 @@ fields:
   method:
     type: radio
     options:
+      - Clever Dripper
       - French Press
-      - Pourover
+      - V60
   brewed:
     type: date
     time: true

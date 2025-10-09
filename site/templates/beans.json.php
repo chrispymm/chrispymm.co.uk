@@ -8,7 +8,7 @@ $json['data']  = [];
 foreach($data as $roast) {
 
   $json['data'][] = array(
-    'id' => str_replace('/', '+', (string)$roast->id()),
+    'id' => (string)$roast->uuid(),
     'title' => (string)$roast->title(),
   );
 
