@@ -4,7 +4,7 @@ num: '{{ page.brewed.toDate("YmdHi") }}'
 
 create:
   title: "{{ page.coffee.toPage.title }}"
-  slug: "{{ page.coffee.toPage.slug }}"
+  slug: "{{page.brewed.toDate('YmdHi')}}-{{ page.coffee.toPage.slug }}"
   status: listed
   redirect: false
   fields: 
