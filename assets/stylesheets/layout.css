@@ -71,7 +71,7 @@
 
   .logo {
     position: relative;
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: var(--text-size-4);
     font-weight: 1000;
     letter-spacing: -0.06em;
@@ -83,6 +83,7 @@
     z-index: 10;
     color: var(--primary);
   }
+
   .logo > :last-child {
     position: relative;
     z-index: 5;
@@ -152,15 +153,16 @@
   }
 
   nav[aria-labelledby="year-nav-title"] ul {
-   margin-top: 0;
-        margin-bottom: var(--space-m)
+    margin-top: 0;
+    margin-bottom: var(--space-m);
   }
 
   .articles > * + * {
     margin-block-start: var(--space-s-l);
   }
 
-  footer {
+  .footer {
+    --center-max-width: 64rem;
     padding-block-start: var(--space-m-xl);
   }
 }

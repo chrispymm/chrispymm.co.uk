@@ -45,12 +45,46 @@
       format("woff2");
   }
 
+  @font-face {
+    font-family: "Petrona";
+    font-weight: 100 900;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/petrona/Petrona-Variable.woff2")
+      format("woff2");
+  }
+
+    @font-face {
+    font-family: "Fira Code";
+    font-weight: 100 900;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/fira-code/FiraCode-Variable.woff2")
+      format("woff2");
+  }
+
+
+  @font-face {
+    font-family: "Spectral-Semibold";
+    font-weight: 600;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/spectral/Spectral-SemiBold.woff")
+      format("woff");
+  }
+
+
+
+
   :root {
-    --bg: #fff;
-    --fg: #000;
+    --white: #fff;
+    --black: #000;
+    --bg: var(--white);
+    --fg: var(--black);
     --primary: rgb(253, 100, 66);
     --font-body: "Recursive";
     --font-heading: "Inter"
+    --font-heading-weight: 800;
       /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
     --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
     --text-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
@@ -112,7 +146,7 @@
   h3,
   h4 {
     font-family: var(--font-heading);
-    font-weight: 800;
+    font-weight: var(--font-heading-weight);
     line-height: 1.3;
     margin-block-start: 0;
   }
@@ -262,8 +296,9 @@
   }
 
   nav a[aria-current] {
-    background-color: var(--primary);
-    border: 3px solid var(--primary);
+    background-color: var(--fg);
+    border: 3px solid var(--fg);
+    color: var(--bg);
     text-decoration: none;
   }
 

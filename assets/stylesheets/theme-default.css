@@ -1,7 +1,138 @@
 @layer theme {
   :root {
+    color-scheme: light dark;
+
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+
+    --red: rgb(255, 132, 101);
+    --pink: rgb(254, 201, 177);
+    --lt-blue: rgb(180, 224, 244);
+    --purple: rgb(210, 172, 236);
+    --khaki: rgb(180, 170, 91);
+    --yellow: rgb(255, 210, 87);
+    --green: rgb(199, 217, 167);
+    --blue: rgb(93, 161, 237);
+
+    --dark: rgb(24, 23, 22);
+
     /* --bg: rgb(244, 227, 212); */
     /* --fg: rgb(51, 25, 17); */
-    --primary: rgb(253, 100, 66);
+    --bg: light-dark(var(--white), var(--dark));
+    --fg: light-dark(var(--dark), var(--white));
+    --primary: light-dark(var(--fg), var(--white));
+
+    --font-body: "Fira Code";
+    --font-heading: "Petrona";
+    --font-heading-weight: 600;
+  }
+
+  [data-theme="light"] {
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="red"] {
+    --bg: var(--red);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="pink"] {
+    --bg: var(--pink);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="blue"] {
+    --bg: var(--blue);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="purple"] {
+    --bg: var(--purple);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="khaki"] {
+    --bg: var(--khaki);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="yellow"] {
+    --bg: var(--yellow);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="green"] {
+    --bg: var(--green);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-accent="red"] {
+    --primary: var(--red);
+  }
+
+  [data-accent="pink"] {
+    --primary: var(--pink);
+  }
+
+  [data-accent="blue"] {
+    --primary: var(--blue);
+  }
+
+  [data-accent="purple"] {
+    --primary: var(--purple);
+  }
+
+  [data-accent="khaki"] {
+    --primary: var(--khaki);
+  }
+
+  [data-accent="yellow"] {
+    --primary: var(--yellow);
+  }
+
+  [data-accent="green"] {
+    --primary: var(--green);
+  }
+
+  theme-switcher,
+  accent-switcher {
+    display: none;
+  }
+
+  theme-switcher:defined,
+  accent-switcher:defined {
+    display: initial;
+  }
+
+  theme-switcher button,
+  accent-switcher button {
+    appearance: none;
+    border: 2px solid transparent;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 999px;
+  }
+
+  theme-switcher button[aria-current="true"],
+  accent-switcher button[aria-current="true"] {
+    border: 2px solid var(--fg);
+  }
+
+  theme-switcher button:focus,
+  accent-switcher button:focus {
+    outline: 4px solid var(--fg);
+    outline-offset: -1px;
   }
 }
