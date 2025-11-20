@@ -3,6 +3,11 @@
         <?php snippet('head') ?>
     </head>
     <body>
+        <script>
+            const theme = localStorage.getItem("theme")
+            console.log(`setting theme data attributes to ${theme}`)
+            document.body.setAttribute('data-theme', theme)
+        </script>
         <a href="#content" class="skip-link">Skip to main content</a>
 
         <?php snippet('header') ?>
@@ -18,8 +23,8 @@
             </div>
         </main>
 
-    <footer>
-
+    <footer class="footer center">
+        <?php snippet('footer') ?>
     </footer>
 
     </body>

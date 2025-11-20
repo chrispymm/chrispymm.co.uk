@@ -5,6 +5,9 @@
   <meta name="description" content="<?= $site->description() ?>">
   <meta name="keywords" content="<?= $site->keywords() ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="module" src="/assets/javascripts/trigger-visibility.js"></script>
+  <script type="module" src="/assets/javascripts/accent-switcher.js"></script>
+  <script type="module" src="/assets/javascripts/theme-switcher.js"></script>
 <style>
 @layer reset, base, theme, layout, utilities;
 </style>
