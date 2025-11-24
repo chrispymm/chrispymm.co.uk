@@ -17,7 +17,8 @@
     src: url("/assets/fonts/recursive/recursive-variable-latin-basic.woff2")
       format("woff2-variations");
     font-weight: 300 1000;
-    unicode-range: U+0020-007F, U+00A3, U+00A9, U+20AC; /* Latin Basic plus £, €, &copy; */
+    unicode-range: U+0020-007F, U+00A3, U+00A9, U+20AC;
+    /* Latin Basic plus £, €, &copy; */
   }
 
   @font-face {
@@ -25,7 +26,8 @@
     src: url("/assets/fonts/recursive/recursive-variable-latin-supplement.woff2")
       format("woff2-variations");
     font-weight: 300 1000;
-    unicode-range: U+A0-A2, U+A4-A8, U+AA-FF; /* https://jrgraphix.net/r/Unicode/00A0-00FF minus £, &copy */
+    unicode-range: U+A0-A2, U+A4-A8, U+AA-FF;
+    /* https://jrgraphix.net/r/Unicode/00A0-00FF minus £, &copy */
   }
 
   @font-face {
@@ -33,7 +35,8 @@
     src: url("/assets/fonts/recursive/recursive-variable-latin-extended-a.woff2")
       format("woff2-variations");
     font-weight: 300 1000;
-    unicode-range: U+0100-017F; /* https://jrgraphix.net/r/Unicode/0100-017F */
+    unicode-range: U+0100-017F;
+    /* https://jrgraphix.net/r/Unicode/0100-017F */
   }
 
   @font-face {
@@ -50,31 +53,24 @@
     font-weight: 100 900;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/petrona/Petrona-Variable.woff2")
-      format("woff2");
+    src: url("/assets/fonts/petrona/Petrona-Variable.woff2") format("woff2");
   }
 
-    @font-face {
+  @font-face {
     font-family: "Fira Code";
     font-weight: 100 900;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/fira-code/FiraCode-Variable.woff2")
-      format("woff2");
+    src: url("/assets/fonts/fira-code/FiraCode-Variable.woff2") format("woff2");
   }
-
 
   @font-face {
     font-family: "Spectral-Semibold";
     font-weight: 600;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/spectral/Spectral-SemiBold.woff")
-      format("woff");
+    src: url("/assets/fonts/spectral/Spectral-SemiBold.woff") format("woff");
   }
-
-
-
 
   :root {
     --white: #fff;
@@ -83,9 +79,8 @@
     --fg: var(--black);
     --primary: rgb(253, 100, 66);
     --font-body: "Recursive";
-    --font-heading: "Inter"
-    --font-heading-weight: 800;
-      /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    --font-heading: "Inter" --font-heading-weight: 800;
+    /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
     --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
     --text-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
     --text-size-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
@@ -206,7 +201,7 @@
   a {
     color: currentColor;
     text-decoration-color: var(--primary);
-    text-decoration-thickness: 0.3ex;
+    text-decoration-thickness: 0.25ex;
     text-underline-offset: 0.3ex;
   }
 
@@ -251,6 +246,19 @@
     max-width: 20ch;
   }
 
+  :is(h1, h2, h3, h4).line {
+    display: flex;
+    justify-items: stretch;
+    align-items: last baseline;
+    gap: 0.2ch;
+  }
+
+  :is(h1, h2, h3, h4).line:after {
+    content: "";
+    width: 100%;
+    border-bottom: 2px solid;
+  }
+
   h2,
   h3 {
     max-width: 44ch;
@@ -292,7 +300,7 @@
   }
 
   nav a {
-    padding: 0 var(--space-3xs)
+    padding: 0 var(--space-3xs);
   }
 
   nav a[aria-current] {
@@ -302,10 +310,7 @@
     text-decoration: none;
   }
 
-@view-transition {
-  navigation: auto;
-}
-
-    
-
+  @view-transition {
+    navigation: auto;
+  }
 }

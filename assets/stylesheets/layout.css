@@ -164,6 +164,7 @@
 
   .footer {
     --center-max-width: 64rem;
+    margin-block-start: var(--space-m-xl);
     padding-block-start: var(--space-m-xl);
   }
 }

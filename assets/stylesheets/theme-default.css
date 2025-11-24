@@ -113,26 +113,52 @@
   theme-switcher:defined,
   accent-switcher:defined {
     display: initial;
+    border-color: var(--bg-dark);
+  }
+
+  theme-switcher fieldset {
+    --bg-dark: hsl(from var(--bg) h calc(s - 3) calc(l - 12));
+    border: none;
   }
 
   theme-switcher button,
   accent-switcher button {
+    --button-bg: var(--fg);
+    --button-border-color: hsl(
+      from var(--button-bg) h calc(s - 3) calc(l - 12)
+    );
     appearance: none;
     border: 2px solid transparent;
+    background: var(--button-bg);
     width: 44px;
     height: 44px;
     padding: 0;
     border-radius: 999px;
+    border: 2px solid var(--button-border-color);
+    color: var(--fg);
+    transition: all 0.2s cubic-bezier(1, 1.94, 0.85, 0.69);
+  }
+
+  theme-switcher button.no-color,
+  accent-switcher button.no-color {
+    --button-bg: rgb(from var(--fg) r g b / 0.2);
+  }
+
+  theme-switcher button:hover,
+  accent-switcher button:hover {
+    transform: scale(1.2);
   }
 
   theme-switcher button[aria-current="true"],
   accent-switcher button[aria-current="true"] {
-    border: 2px solid var(--fg);
+    border: 8px solid var(--button-border-color);
+    transform: scale(1.2);
   }
 
-  theme-switcher button:focus,
-  accent-switcher button:focus {
+  theme-switcher button:focus-visible,
+  accent-switcher button:focus-visible {
     outline: 4px solid var(--fg);
     outline-offset: -1px;
+    transform: scale(1.2);
   }
 }

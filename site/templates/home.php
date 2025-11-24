@@ -8,7 +8,7 @@
 
 <? if($posts): ?>
 <section class="flow">
-    <h2>Articles</h2>
+    <h2 class="line">Articles</h2>
     <ul>
     <?php foreach ($posts as $post): ?>
         <li>
@@ -21,15 +21,15 @@
 <? endif ?>
 
 <section class="latest flow">
-    <h2>Latest</h2>
+    <h2 class="line">Latest</h2>
     <div class="grid">
         <div class="flow latest__card">
-            <h3>Coffee</h3>
+            <h3 class="">Coffee</h3>
             <!-- <p><?= $latestBrew->method() ?></p> -->
             <?php snippet('coffee-list', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
         </div>
         <div class="flow latest__card">
-            <h3>Book</h3>
+            <h3 class="">Book</h3>
             <div class="cluster">
                 <?php if($image = $latestBook->cover()->toFile()): ?>
                     <img src="<?= $image->url() ?>" alt="" width="40px">

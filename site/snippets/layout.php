@@ -2,7 +2,7 @@
     <head>
         <?php snippet('head') ?>
     </head>
-    <body>
+    <body class="flow" style="--flow-space: var(--space-m-xl)">
         <script>
             const theme = localStorage.getItem("theme")
             console.log(`setting theme data attributes to ${theme}`)
