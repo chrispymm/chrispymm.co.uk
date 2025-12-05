@@ -27,10 +27,14 @@
     );
   }
 
+  .grid-col-span-full {
+    grid-column: 1 / -1;
+  }
+
   .split {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gutter, var(--space-s-l));
+    gap: var(--gutter, var(--space-s));
     align-items: var(--split-vertical-alignment, center);
     justify-content: space-between;
   }
@@ -71,27 +75,26 @@
   }
 
   .logo {
+    display: flex;
     position: relative;
     font-family: var(--font-body);
-    font-size: var(--text-size-4);
-    font-weight: 1000;
-    letter-spacing: -0.06em;
+    font-size: var(--text-size-2);
+    font-weight: 600;
+    letter-spacing: 0.02em;
     text-decoration: none;
+    text-transform: uppercase;
   }
 
-  .logo > :first-child {
-    position: relative;
-    z-index: 10;
+  .logo [aria-hidden] {
     color: var(--primary);
-  }
-
-  .logo > :last-child {
-    position: relative;
-    z-index: 5;
   }
 
   .masthead {
     --center-max-width: 64rem;
+  }
+
+  .masthead nav ul {
+    margin-block: 0;
   }
 
   .page-title {
@@ -102,13 +105,45 @@
   }
 
   .library {
-    --center-max-width: 100%;
+    --center-max-width: 64rem;
+    container-type: inline-size;
+  }
+
+  .year header {
+    position: relative;
+  }
+
+  .year header .count {
+    position: absolute;
+    top: 0.3rem;
+    left: 6.4em;
+    font-size: var(--text-size--1);
+    letter-spacing: -0.8;
+  }
+
+  .year + .year {
+    margin-block-start: var(--space-m-l);
   }
 
   .books {
-    --grid-cell-min-width: 200px;
-    --grid-cell-max-width: 300px;
+    --grid-cell-min-width: 140px;
+    --grid-cell-max-width: 200px;
     row-gap: var(--space-s-l);
+    margin-block-start: var(--space-s-m);
+
+    @container (width < 400px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .book {
+    --flow-space: var(--space-2xs);
+
+    @container (width < 400px) {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--space-m);
+    }
   }
 
   .book img {
@@ -117,7 +152,15 @@
     object-fit: cover;
   }
 
-  .home > section {
+  .book > div > * + * {
+    margin-block-start: var(--space-3xs);
+  }
+
+  #content {
+    margin-block-start: var(--space-m-xl);
+  }
+
+  .home > section + section {
     margin-block-start: var(--space-m-xl);
   }
 
@@ -125,14 +168,74 @@
     --flow-space: var(--space-2xs);
   }
 
-  .rating {
-    line-height: 1;
+  .coffees {
+    --grid-cell-min-width: 300px;
+    --grid-cell-max-width: 400px;
+    gap: var(--space-m-xl);
+    margin-block-start: var(--space-s-m);
+
+    @container (width < 400px) {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .rating .star {
+  .coffees .coffee {
+    --flow-space: 0.8rem;
+  }
+
+  .coffees dl {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: baseline;
+    column-gap: var(--space-2xs);
+  }
+
+  .coffee dt {
+    font-size: var(--text-size--1);
+    text-align: right;
+  }
+
+  .coffee dd {
+    font-size: var(--text-size-0);
+  }
+
+  .coffee blockquote {
     position: relative;
-    display: inline-block;
-    filter: grayscale(1);
+    border: none;
+    font-size: var(--font-size-0);
+    padding-inline: var(--space-s);
+    margin-inline: 0;
+    font-family: var(--font-heading);
+  }
+
+  .coffee blockquote:before {
+    content: "\201C";
+    position: absolute;
+    top: -20px;
+    left: -6px;
+    font-size: var(--text-size-5);
+  }
+
+  .coffee blockquote:after {
+    content: "\201D";
+    position: absolute;
+    bottom: -31px;
+    right: 6px;
+    font-size: var(--text-size-5);
+  }
+
+  details summary :is(h1, h2, h3, h4) {
+    display: inline;
+  }
+
+  .rating {
+    line-height: 1;
+    display: flex;
+    max-width: 65%;
+  }
+
+  .rating > * {
+    aspect-ratio: 1/1;
   }
 
   .rating .star--filled {

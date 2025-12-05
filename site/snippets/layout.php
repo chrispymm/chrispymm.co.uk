@@ -2,7 +2,7 @@
     <head>
         <?php snippet('head') ?>
     </head>
-    <body class="flow" style="--flow-space: var(--space-m-xl)">
+    <body>
         <script>
             const theme = localStorage.getItem("theme")
             console.log(`setting theme data attributes to ${theme}`)
@@ -14,9 +14,12 @@
 
         <main id="main" tabindex="-1">
             <div id="content" class="center <?= $page->template() ?>">
-<?php if($title): ?>
+<?php if(isset($title)): ?>
                 <header class="page-title center">
-                    <h1><?= $title ?></h1>
+                    <?php if(isset($pretitle)): ?>
+                        <span class=""><?= $pretitle ?></span>
+                    <?php endif ?>
+                    <?= snippet('line-heading', ['text' => $title]) ?>
                 </header>
 <?php endif;?>
                 <?= $slot ?>

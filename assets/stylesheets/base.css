@@ -213,6 +213,26 @@
     text-decoration: none;
   }
 
+  a:hover {
+    background: linear-gradient(
+      0deg,
+      transparent 0,
+      var(--primary) 0,
+      var(--primary) 25%,
+      transparent 25%
+    );
+  }
+
+  a:focus:hover {
+    background: linear-gradient(
+      0deg,
+      var(--fg) 0,
+      var(--primary) 0,
+      var(--primary) 25%,
+      var(--fg) 25%
+    );
+  }
+
   .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
   }
@@ -247,16 +267,24 @@
   }
 
   :is(h1, h2, h3, h4).line {
-    display: flex;
-    justify-items: stretch;
-    align-items: last baseline;
-    gap: 0.2ch;
+    --gradient-offset: 0.27em;
+    background: linear-gradient(
+      0deg,
+      transparent var(--gradient-offset),
+      var(--fg) var(--gradient-offset),
+      var(--fg) calc(var(--gradient-offset) + 2px),
+      transparent calc(var(--gradient-offset) + 2px)
+    );
+    line-height: 1.1;
+    padding-inline-end: 0.2ch;
+    position: relative;
   }
 
-  :is(h1, h2, h3, h4).line:after {
-    content: "";
-    width: 100%;
-    border-bottom: 2px solid;
+  /* linear-gradient(0deg, transparent 0.7em, rgb(255 255 255 / 1) 0.7em, rgb(255 255 255 / 1) calc(0.7em + 2px), transparent calc(0.7em + 2px)) */
+
+  :is(h1, h2, h3, h4).line span {
+    background: var(--bg);
+    padding-inline-end: 0.2ch;
   }
 
   h2,
@@ -280,6 +308,20 @@
   ss11: simplified 1
   */
     font-feature-settings: "ss01", "ss02", "ss07", "ss08", "ss10", "ss11";
+  }
+
+  dl {
+  }
+
+  dt {
+    text-transform: uppercase;
+    font-size: var(--text-size--1);
+    font-weight: 600;
+  }
+
+  dd {
+    font-size: var(--text-size-0);
+    margin-inline: 0;
   }
 
   pre.hljs {

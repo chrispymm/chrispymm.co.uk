@@ -37,10 +37,12 @@ class AccentSwitcher extends HTMLElement {
     for (const button of this.buttons) {
       const label = button.textContent.trim();
       const icon = button.querySelector("svg");
-      button.setAttribute("aria-label", label);
-      button.innerHTML = "";
-      if (icon) {
-        button.appendChild(icon);
+      if (this.hideButtonLabels) {
+        button.setAttribute("aria-label", label);
+        button.innerHTML = "";
+        if (icon) {
+          button.appendChild(icon);
+        }
       }
     }
 
@@ -142,6 +144,10 @@ class AccentSwitcher extends HTMLElement {
 
   get defaultButton() {
     return this.querySelector("button[default]");
+  }
+
+  get hideButtonLabels() {
+    return this.getAttribute("hide-button-labels") || false;
   }
 }
 

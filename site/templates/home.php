@@ -8,7 +8,7 @@
 
 <? if($posts): ?>
 <section class="flow">
-    <h2 class="line">Articles</h2>
+    <?= snippet('line-heading', ['level' => 2, 'text' => 'Articles']) ?>
     <ul>
     <?php foreach ($posts as $post): ?>
         <li>
@@ -21,12 +21,12 @@
 <? endif ?>
 
 <section class="latest flow">
-    <h2 class="line">Latest</h2>
+    <?= snippet('line-heading', ['level' => 2, 'text' => 'Latest']) ?>
     <div class="grid">
         <div class="flow latest__card">
             <h3 class="">Coffee</h3>
             <!-- <p><?= $latestBrew->method() ?></p> -->
-            <?php snippet('coffee-list', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
+            <?php snippet('coffee-card', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
         </div>
         <div class="flow latest__card">
             <h3 class="">Book</h3>

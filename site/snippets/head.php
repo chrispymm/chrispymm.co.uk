@@ -9,7 +9,7 @@
   <script type="module" src="/assets/javascripts/accent-switcher.js"></script>
   <script type="module" src="/assets/javascripts/theme-switcher.js"></script>
 <style>
-@layer reset, base, theme, layout, utilities;
+@layer reset, base, layout, theme, utilities;
 </style>
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/reset.css" />
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/base.css" />

@@ -2,6 +2,7 @@
 
 <?= $page->text()->kirbytext() ?>
 <div class="flow">
+    <!--
 <div class="center">
         <nav aria-labelledby="year-nav-title">
             <h2 id="year-nav-title" class="font-size-1">Year</h2>
@@ -15,17 +16,19 @@
             </ul>
         </nav>
 </div>
-
-
+-->
 
 <?php foreach($years as $year => $books): ?>
-    <section>
-    <header class="cluster" style="--cluster-vertical-alignment: baseline;"><h2><?= $year ?></h2><span><?= $books->count() ?> books</span></header>
+    <section class="year">
+    <header>
+        <?= snippet('line-heading', ['level' => 2, 'text' => $year]) ?>
+        <span class="count">— <?= $books->count() ?> books</span>
+    </header>
 
     <div class="books grid">
 
     <?php foreach($books as $book): ?>
-        <article class="book flow" style="--flow-space: 0.3rem; view-transition-class: 'book', view-transition-name: book-<?=$book->uid()?>;">
+        <article class="book flow" style="view-transition-class: 'book', view-transition-name: book-<?=$book->uid()?>;">
                 <?php if($image = $book->cover()->toFile()): ?>
                     <picture>
 
@@ -40,9 +43,11 @@
                 >
                     </picture>
                 <?php endif ?>
-            <h2 class="font-size-0"><?=$book->title()?></h2>
-            <p class="font-size--1"><?= $book->author() ?></p>
-            <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+                <div class="" >
+                    <h2 class="font-size-0"><?=$book->title()?></h2>
+                    <p class="font-size--1"><?= $book->author() ?></p>
+                    <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+                </div>
         </article>
     <?php endforeach ?>
         </div>

@@ -1,6 +1,9 @@
 @layer theme {
   :root {
-    color-scheme: light dark;
+    --LIGHT: initial;
+    --DARK: ;
+    --COLOR: ;
+    color-scheme: light;
 
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
@@ -27,51 +30,79 @@
     --font-heading-weight: 600;
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --LIGHT: ;
+      --DARK: initial;
+      --COLOR: ;
+      color-scheme: dark;
+    }
+  }
+
   [data-theme="light"] {
+    --LIGHT: initial;
+    --DARK: ;
+    --COLOR: ;
     color-scheme: light;
   }
 
   [data-theme="dark"] {
+    --LIGHT: ;
+    --DARK: initial;
+    --COLOR: ;
     color-scheme: dark;
   }
 
   [data-theme="red"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
     --bg: var(--red);
     --fg: var(--dark);
     --primary: var(--fg);
   }
 
   [data-theme="pink"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+
     --bg: var(--pink);
     --fg: var(--dark);
     --primary: var(--fg);
   }
 
   [data-theme="blue"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
     --bg: var(--blue);
     --fg: var(--dark);
     --primary: var(--fg);
   }
 
   [data-theme="purple"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
     --bg: var(--purple);
     --fg: var(--dark);
     --primary: var(--fg);
   }
 
-  [data-theme="khaki"] {
-    --bg: var(--khaki);
-    --fg: var(--dark);
-    --primary: var(--fg);
-  }
-
   [data-theme="yellow"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
     --bg: var(--yellow);
     --fg: var(--dark);
     --primary: var(--fg);
   }
 
   [data-theme="green"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
     --bg: var(--green);
     --fg: var(--dark);
     --primary: var(--fg);
@@ -105,9 +136,16 @@
     --primary: var(--green);
   }
 
+  footer {
+    border-top: 2px solid;
+  }
+
   theme-switcher,
   accent-switcher {
     display: none;
+  }
+
+  accent-switcher {
   }
 
   theme-switcher:defined,
@@ -116,49 +154,55 @@
     border-color: var(--bg-dark);
   }
 
-  theme-switcher fieldset {
+  theme-switcher fieldset,
+  accent-switcher fieldset {
     --bg-dark: hsl(from var(--bg) h calc(s - 3) calc(l - 12));
     border: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  theme-switcher .controls,
+  accent-switcher .controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7ch, 1fr));
+    gap: 0px;
   }
 
   theme-switcher button,
   accent-switcher button {
-    --button-bg: var(--fg);
-    --button-border-color: hsl(
-      from var(--button-bg) h calc(s - 3) calc(l - 12)
-    );
     appearance: none;
-    border: 2px solid transparent;
-    background: var(--button-bg);
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    border-radius: 999px;
-    border: 2px solid var(--button-border-color);
+    border: none;
+    background: transparent;
+    font-size: var(--text-size--1);
     color: var(--fg);
-    transition: all 0.2s cubic-bezier(1, 1.94, 0.85, 0.69);
-  }
-
-  theme-switcher button.no-color,
-  accent-switcher button.no-color {
-    --button-bg: rgb(from var(--fg) r g b / 0.2);
+    border-block: 1px solid var(--fg);
+    border-inline: 1px solid var(--fg);
+    /* use negative margins to make borders overlap */
+    margin-block-start: -1px;
+    margin-inline-start: -1px;
   }
 
   theme-switcher button:hover,
   accent-switcher button:hover {
-    transform: scale(1.2);
+    --lighten-amount: var(--DARK, 0.15) var(--COLOR, 0.05);
+    --lighten: oklch(from var(--bg) calc(l + var(--lighten-amount)) c h);
+    --darken: oklch(from var(--bg) calc(l - 0.06) c h);
+    --button-hover-bg: var(--LIGHT, var(--darken)) var(--DARK, var(--lighten))
+      var(--COLOR, var(--lighten));
+    background: var(--button-hover-bg);
   }
 
   theme-switcher button[aria-current="true"],
   accent-switcher button[aria-current="true"] {
-    border: 8px solid var(--button-border-color);
-    transform: scale(1.2);
+    background: var(--fg);
+    color: var(--bg);
+    box-shadow: inset 0px 0px 0px 2px var(--bg);
   }
 
   theme-switcher button:focus-visible,
   accent-switcher button:focus-visible {
-    outline: 4px solid var(--fg);
-    outline-offset: -1px;
-    transform: scale(1.2);
+    outline: 3px solid var(--fg);
+    /* outline-offset: 2px; */
   }
 }
