@@ -66,7 +66,6 @@
     --LIGHT: ;
     --DARK: ;
     --COLOR: initial;
-
     --bg: var(--pink);
     --fg: var(--dark);
     --primary: var(--fg);

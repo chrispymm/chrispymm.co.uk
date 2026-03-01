@@ -16,4 +16,4 @@
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/layout.css" />
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/utilities.css" />
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/theme-default.css" />
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/highlight/a11y-light.css" />
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/highlight/a11y-light-dark.css" />

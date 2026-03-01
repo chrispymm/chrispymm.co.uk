@@ -326,19 +326,15 @@
 
   pre.hljs {
     font-family: "Bergen Mono", monospace;
-    background: #f6f6f6;
     font-size: var(--text-size--1);
     padding: var(--space-s);
     overflow: scroll;
-    border: 4px solid #e6e6e6;
   }
 
   code:not([data-language]) {
     font-size: var(--text-size--1);
     font-family: "Bergen Mono", monospace;
-    background: #f6f6f6;
-    outline: 2px solid #f6f6f6;
-    box-shadow: 0 0 0 4px #e6e6e6;
+    padding: 0.2ch 0.4ch;
   }
 
   nav a {
