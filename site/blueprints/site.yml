@@ -11,4 +11,13 @@ sections:
     sortBy: brewed desc 
     status: all
 
+  settings:
+    type: fields
+    fields:
+      colorextractor:
+        type: janitor
+        label: Extract missing colors
+        progress: 'Processing…'
+        command: janitor:job --key sylvainjule.colorextractor.jobs.forceExtractColors
+
     

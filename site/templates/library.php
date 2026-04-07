@@ -17,7 +17,7 @@
         </nav>
 </div>
 -->
-
+<?php $counter = 0; ?>
 <?php foreach($years as $year => $books): ?>
     <section class="year">
     <header>
@@ -28,9 +28,10 @@
     <div class="books grid">
 
     <?php foreach($books as $book): ?>
+        <? $counter++ ?>
         <article class="book flow" style="view-transition-class: 'book', view-transition-name: book-<?=$book->uid()?>;">
                 <?php if($image = $book->cover()->toFile()): ?>
-                    <picture>
+                <picture style="background-color: <?= $image->color()->dominantColor() ?>; background-size: cover; background-repeat: no-repeat; background-image: url('<?= $image->thumb(['width' => 30, 'quality' => 50, 'blur' => 10])->url() ?>');">
 
                     <source
                         srcset="<?= $image->srcset('book-webp') ?>"
@@ -40,6 +41,8 @@
                         alt=""
                         src="<?= $image->thumb(['width' => 150, 'quality' => 60])->url() ?>"
                         srcset="<?= $image->srcset('book')?>"
+                        width="<?= $image->thumb(['width' => 300])->width() ?>"
+                        <?= $counter >= 0 ? 'loading="lazy"' : '' ?>
                 >
                     </picture>
                 <?php endif ?>

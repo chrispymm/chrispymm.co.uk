@@ -24,7 +24,10 @@
   "require": {
     "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
     "getkirby/cms": "^4.0",
-    "scriptotek/google-books": "^0.2.6"
+    "scriptotek/google-books": "^0.2.6",
+    "sylvainjule/colorextractor": "^2.1",
+    "getkirby/cli": "^1.5",
+    "bnomei/kirby3-janitor": "^5.4"
   },
   "config": {
     "allow-plugins": {

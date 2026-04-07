@@ -1,75 +1,59 @@
 @layer base {
   @font-face {
-    font-family: "Bergen Mono";
-    src: url("/assets/fonts/BergenMono/BergenMono-Bold.woff2") format("woff2");
+    font-family: "Petrona";
     font-weight: 800;
-  }
-
-  @font-face {
-    font-family: "Bergen Mono";
-    src: url("/assets/fonts/BergenMono/BergenMono-Regular.woff2")
-      format("woff2");
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: "Recursive";
-    src: url("/assets/fonts/recursive/recursive-variable-latin-basic.woff2")
-      format("woff2-variations");
-    font-weight: 300 1000;
-    unicode-range: U+0020-007F, U+00A3, U+00A9, U+20AC;
-    /* Latin Basic plus £, €, &copy; */
-  }
-
-  @font-face {
-    font-family: "Recursive";
-    src: url("/assets/fonts/recursive/recursive-variable-latin-supplement.woff2")
-      format("woff2-variations");
-    font-weight: 300 1000;
-    unicode-range: U+A0-A2, U+A4-A8, U+AA-FF;
-    /* https://jrgraphix.net/r/Unicode/00A0-00FF minus £, &copy */
-  }
-
-  @font-face {
-    font-family: "Recursive";
-    src: url("/assets/fonts/recursive/recursive-variable-latin-extended-a.woff2")
-      format("woff2-variations");
-    font-weight: 300 1000;
-    unicode-range: U+0100-017F;
-    /* https://jrgraphix.net/r/Unicode/0100-017F */
-  }
-
-  @font-face {
-    font-family: "Inter";
-    font-weight: 100 900;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/inter/Inter-Var-Roman-Latin.woff2?v=3.11")
+    src: url("/assets/fonts/petrona/Petrona-800-LatinBasic.woff2")
       format("woff2");
+    unicode-range: U+0020-007E, U+00A0-00FF;
   }
 
   @font-face {
     font-family: "Petrona";
-    font-weight: 100 900;
+    font-weight: 800;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/petrona/Petrona-Variable.woff2") format("woff2");
+    src: url("/assets/fonts/petrona/Petrona-800-LatinExt.woff2") format("woff2");
+    unicode-range: U+0100-0131, U+0134-017E;
   }
 
   @font-face {
-    font-family: "Fira Code";
-    font-weight: 100 900;
+    font-family: "Fira Code Custom";
+    font-weight: 400 800;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/fira-code/FiraCode-Variable.woff2") format("woff2");
+    src: url("/assets/fonts/fira-code/FiraCode-Variable-LatinBasic.woff2")
+      format("woff2");
+    unicode-range: U+0020-007E, U+00A0-00FF;
   }
 
   @font-face {
-    font-family: "Spectral-Semibold";
-    font-weight: 600;
+    font-family: "Fira Code Custom";
+    font-weight: 400 800;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/spectral/Spectral-SemiBold.woff") format("woff");
+    src: url("/assets/fonts/fira-code/FiraCode-Variable-LatinExt.woff2")
+      format("woff2");
+    unicode-range: U+0100-0131, U+0134-017E;
+  }
+
+  @font-face {
+    font-family: "Adjusted Courier New Fallback";
+    src: local(Courier New);
+    size-adjust: 114%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: 19%;
+  }
+
+  @font-face {
+    font-family: "Adjusted Georgia Fallback";
+    src: local(Georgia);
+    size-adjust: 97%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: 2%;
   }
 
   :root {
@@ -78,8 +62,9 @@
     --bg: var(--white);
     --fg: var(--black);
     --primary: rgb(253, 100, 66);
-    --font-body: "Recursive";
-    --font-heading: "Inter" --font-heading-weight: 800;
+    --font-body: "Fira Code Custom", "Adjusted Courier New Fallback", monospace;
+    --font-heading: "Petrona", "Adjusted Georgia Fallback", serif;
+    --font-heading-weight: 800;
     /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
     --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
     --text-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
@@ -350,5 +335,16 @@
 
   @view-transition {
     navigation: auto;
+  }
+
+  .js {
+    img[loading="lazy"] {
+      opacity: 0;
+    }
+
+    img[loading="lazy"].loaded.visible {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
   }
 }

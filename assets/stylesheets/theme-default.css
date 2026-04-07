@@ -25,8 +25,9 @@
     --fg: light-dark(var(--dark), var(--white));
     --primary: light-dark(var(--fg), var(--white));
 
-    --font-body: "Fira Code";
-    --font-heading: "Petrona";
+    --font-body: "Fira Code Custom", "Adjusted Courier New Fallback", monospace;
+    --font-heading: "Petrona", "Adjusted Georgia Fallback", serif;
+
     --font-heading-weight: 600;
   }
 
