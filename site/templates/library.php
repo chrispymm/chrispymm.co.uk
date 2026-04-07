@@ -38,7 +38,7 @@
                     >
                     <img
                         alt=""
-                        src="<?= $image->thumb(['width' => 300, 'quality' => 60])->url() ?>"
+                        src="<?= $image->thumb(['width' => 150, 'quality' => 60])->url() ?>"
                         srcset="<?= $image->srcset('book')?>"
                 >
                     </picture>
