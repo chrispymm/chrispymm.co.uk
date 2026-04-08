@@ -10,9 +10,7 @@ return [
     'api' => [
         'basicAuth' => true,
         'allowInsecure' => true
-
     ],
-    'url' => '/',
     'sylvainjule.colorextractor.mode' => 'both',
     's1syphos.highlight' => [
         'class' => 'hljs',
@@ -128,7 +126,6 @@ return [
                     'source'   => $tmpFile,
                     'filename' => $filename,
                 ], true);
-                
                 // Update the field on the page
                 $page->update([
                     'cover' => Data::encode([$file->filename()], 'yaml'),
@@ -136,7 +133,6 @@ return [
                 ]);
 
             }
-            
         }
     }
     ],

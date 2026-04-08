@@ -1,10 +1,11 @@
 <?php 
-
 return [
     'debug' => true,
-    'url' => '/',
     'api' => [
         'basicAuth' => true,
         'allowInsecure' => true
+    ],
+    'sylvainallignol.cache-stamp' => [
+        'active' => false,          // Enable/disable the plugin
     ],
 ];

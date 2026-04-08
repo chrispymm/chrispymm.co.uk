@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae8169100ba4f38d7dbe39bea26b4ba6",
+    "content-hash": "9d7626335016d975ecaca012294e8929",
     "packages": [
         {
             "name": "bnomei/kirby3-dotenv",
@@ -1781,6 +1781,45 @@
                 "source": "https://github.com/Seldaek/cli-prompt/tree/1.0.4"
             },
             "time": "2020-12-15T21:32:01+00:00"
+        },
+        {
+            "name": "sylvainallignol/cache-stamp",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SylvainAllignol/kirby-cache-stamp.git",
+                "reference": "7047ba5a869fb23392293103b8d027643be512f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SylvainAllignol/kirby-cache-stamp/zipball/7047ba5a869fb23392293103b8d027643be512f9",
+                "reference": "7047ba5a869fb23392293103b8d027643be512f9",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/cms": "^3.0 || ^4.0 || ^5.0",
+                "getkirby/composer-installer": "^1.1",
+                "php": ">=8.2"
+            },
+            "type": "kirby-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sylvain Allignol",
+                    "email": "sylvain@allignol.com",
+                    "homepage": "https://sylvainallignol.com"
+                }
+            ],
+            "description": "Cache buster for CSS, JS, fonts, SVG, PDF and images with advanced configuration options",
+            "homepage": "https://plugins.getkirby.com/sylvainallignol/cache-stamp",
+            "support": {
+                "issues": "https://github.com/SylvainAllignol/kirby-cache-stamp/issues",
+                "source": "https://github.com/SylvainAllignol/kirby-cache-stamp/tree/v1.0.4"
+            },
+            "time": "2026-02-13T12:41:44+00:00"
         },
         {
             "name": "sylvainjule/colorextractor",

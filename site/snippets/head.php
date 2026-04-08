@@ -10,22 +10,23 @@
         document.documentElement.classList.add('js');
       }
   </script>
-  <script type="module" src="/assets/javascripts/trigger-visibility.js"></script>
-  <script type="module" src="/assets/javascripts/accent-switcher.js"></script>
-  <script type="module" src="/assets/javascripts/theme-switcher.js"></script>
-  <script type="module" src="/assets/javascripts/lazy-loading.js"></script>
+  <?= js("assets/javascripts/trigger-visibility.js", ['type' => 'module']) ?>
+  <?= js("assets/javascripts/accent-switcher.js", ['type' => 'module']) ?>
+  <?= js("assets/javascripts/theme-switcher.js", ['type' => 'module']) ?>
+  <?= js("assets/javascripts/lazy-loading.js", ['type' => 'module']) ?>
 <style>
 @layer reset, base, layout, theme, utilities;
 </style>
-<link rel="preload" href="assets/fonts/fira-code/FiraCode-Variable-LatinBasic.woff2" type="font/woff2" as="font" crossorigin="">
-<link rel="preload" href="assets/fonts/petrona/Petrona-800-LatinBasic.woff2" type="font/woff2" as="font" crossorigin="">
 
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/reset.css" />
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/base.css" />
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/layout.css" />
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/utilities.css" />
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/theme-default.css" />
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/highlight/a11y-light-dark.css" />
+<link rel="preload" href="<?= cacheStamp('assets/fonts/fira-code/FiraCode-Variable-LatinBasic.woff2') ?>" type="font/woff2" as="font" crossorigin="">
+<link rel="preload" href="<?= cacheStamp('assets/fonts/petrona/Petrona-800-LatinBasic.woff2') ?>" type="font/woff2" as="font" crossorigin="">
+
+<?= css('assets/stylesheets/reset.css') ?>
+<?= css('assets/stylesheets/base.css') ?>
+<?= css('assets/stylesheets/layout.css') ?>
+<?= css('assets/stylesheets/utilities.css') ?>
+<?= css('assets/stylesheets/theme-default.css') ?>
+<?= css('assets/stylesheets/highlight/a11y-light-dark.css') ?>
 
 <meta name="description" content="<?= $site->description() ?>">
 <meta name="keywords" content="<?= $site->keywords() ?>">
