@@ -1,7 +1,9 @@
 <?php
 require_once('vendor/autoload.php');
 require_once(__DIR__ . '/../utils/fetch_og_image.php');
+require_once __DIR__ . '/../plugins/kirby3-dotenv/global.php';
 use Scriptotek\GoogleBooks\GoogleBooks;
+loadenv();
 
 return [
     'debug'  => true,
@@ -12,10 +14,10 @@ return [
     ],
     'url' => '/',
     'sylvainjule.colorextractor.mode' => 'both',
-  's1syphos.highlight' => [
-    'class' => 'hljs',
-    'languages' => ['html', 'js', 'css', 'ruby', 'erb']
-  ],
+    's1syphos.highlight' => [
+        'class' => 'hljs',
+        'languages' => ['html', 'js', 'css', 'ruby', 'erb']
+    ],
     'routes' => [
         [
             'pattern' => 'library/(:num)',
@@ -69,7 +71,7 @@ return [
             $providedAuthor = str_replace(' ', '+', $page->author());
             
             $gBooks = new GoogleBooks([
-                'key' => 'AIzaSyAc65eroI7eKyfX6gIH0Lr29B2YqVq7hTQ',
+                'key' => env('GOOGLE_BOOKS_API_KEY'),
                 'maxResults' => 10,
             ]);
 
