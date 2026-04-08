@@ -14,6 +14,11 @@ sections:
   settings:
     type: fields
     fields:
+      description:
+        type: textarea
+        label: Description
+        hint: A short description of the site.
+        rows: 3
       colorextractor:
         type: janitor
         label: Extract missing colors

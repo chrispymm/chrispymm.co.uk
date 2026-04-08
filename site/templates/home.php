@@ -32,7 +32,7 @@
             <h3 class="">Book</h3>
             <div class="cluster">
                 <?php if($image = $latestBook->cover()->toFile()): ?>
-                    <img src="<?= $image->url() ?>" alt="" width="40px">
+                    <img src="<?= $image->thumb(['width' => 80, 'quality' => 60])->url() ?>" alt="" width="40px">
                 <?php endif ?>
                 <div class="flow" style="--flow-space:0.6rem">
                     <h4 class="font-size-0"><a href="/library"><?= $latestBook->title() ?></a></h4>
