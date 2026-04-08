@@ -1,7 +1,208 @@
 @layer theme {
   :root {
+    --LIGHT: initial;
+    --DARK: ;
+    --COLOR: ;
+    color-scheme: light;
+
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+
+    --red: rgb(255, 132, 101);
+    --pink: rgb(254, 201, 177);
+    --lt-blue: rgb(180, 224, 244);
+    --purple: rgb(210, 172, 236);
+    --khaki: rgb(180, 170, 91);
+    --yellow: rgb(255, 210, 87);
+    --green: rgb(199, 217, 167);
+    --blue: rgb(93, 161, 237);
+
+    --dark: rgb(24, 23, 22);
+
     /* --bg: rgb(244, 227, 212); */
     /* --fg: rgb(51, 25, 17); */
-    --primary: rgb(253, 100, 66);
+    --bg: light-dark(var(--white), var(--dark));
+    --fg: light-dark(var(--dark), var(--white));
+    --primary: light-dark(var(--fg), var(--white));
+
+    --font-body: "Fira Code Custom", "Adjusted Courier New Fallback", monospace;
+    --font-heading: "Petrona", "Adjusted Georgia Fallback", serif;
+
+    --font-heading-weight: 600;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --LIGHT: ;
+      --DARK: initial;
+      --COLOR: ;
+      color-scheme: dark;
+    }
+  }
+
+  [data-theme="light"] {
+    --LIGHT: initial;
+    --DARK: ;
+    --COLOR: ;
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    --LIGHT: ;
+    --DARK: initial;
+    --COLOR: ;
+    color-scheme: dark;
+  }
+
+  [data-theme="red"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+    --bg: var(--red);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="pink"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+    --bg: var(--pink);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="blue"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+    --bg: var(--blue);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="purple"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+    --bg: var(--purple);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="yellow"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+    --bg: var(--yellow);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-theme="green"] {
+    --LIGHT: ;
+    --DARK: ;
+    --COLOR: initial;
+    --bg: var(--green);
+    --fg: var(--dark);
+    --primary: var(--fg);
+  }
+
+  [data-accent="red"] {
+    --primary: var(--red);
+  }
+
+  [data-accent="pink"] {
+    --primary: var(--pink);
+  }
+
+  [data-accent="blue"] {
+    --primary: var(--blue);
+  }
+
+  [data-accent="purple"] {
+    --primary: var(--purple);
+  }
+
+  [data-accent="khaki"] {
+    --primary: var(--khaki);
+  }
+
+  [data-accent="yellow"] {
+    --primary: var(--yellow);
+  }
+
+  [data-accent="green"] {
+    --primary: var(--green);
+  }
+
+  footer {
+    border-top: 2px solid;
+  }
+
+  theme-switcher,
+  accent-switcher {
+    display: none;
+  }
+
+  accent-switcher {
+  }
+
+  theme-switcher:defined,
+  accent-switcher:defined {
+    display: initial;
+    border-color: var(--bg-dark);
+  }
+
+  theme-switcher fieldset,
+  accent-switcher fieldset {
+    --bg-dark: hsl(from var(--bg) h calc(s - 3) calc(l - 12));
+    border: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  theme-switcher .controls,
+  accent-switcher .controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7ch, 1fr));
+    gap: 0px;
+  }
+
+  theme-switcher button,
+  accent-switcher button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-size: var(--text-size--1);
+    color: var(--fg);
+    border-block: 1px solid var(--fg);
+    border-inline: 1px solid var(--fg);
+    /* use negative margins to make borders overlap */
+    margin-block-start: -1px;
+    margin-inline-start: -1px;
+  }
+
+  theme-switcher button:hover,
+  accent-switcher button:hover {
+    --lighten-amount: var(--DARK, 0.15) var(--COLOR, 0.05);
+    --lighten: oklch(from var(--bg) calc(l + var(--lighten-amount)) c h);
+    --darken: oklch(from var(--bg) calc(l - 0.06) c h);
+    --button-hover-bg: var(--LIGHT, var(--darken)) var(--DARK, var(--lighten))
+      var(--COLOR, var(--lighten));
+    background: var(--button-hover-bg);
+  }
+
+  theme-switcher button[aria-current="true"],
+  accent-switcher button[aria-current="true"] {
+    background: var(--fg);
+    color: var(--bg);
+    box-shadow: inset 0px 0px 0px 2px var(--bg);
+  }
+
+  theme-switcher button:focus-visible,
+  accent-switcher button:focus-visible {
+    outline: 3px solid var(--fg);
+    /* outline-offset: 2px; */
   }
 }

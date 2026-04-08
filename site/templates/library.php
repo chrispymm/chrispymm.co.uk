@@ -2,6 +2,7 @@
 
 <?= $page->text()->kirbytext() ?>
 <div class="flow">
+    <!--
 <div class="center">
         <nav aria-labelledby="year-nav-title">
             <h2 id="year-nav-title" class="font-size-1">Year</h2>
@@ -9,18 +10,28 @@
             <?php if( count($years)): ?>
                 <li><a <?= !$currentYear ? 'aria-current="true"' : '' ?> href="/library/">All</a></li>
             <?php endif ?>
-            <?php foreach($years as $year): ?>
+            <?php foreach($allYears as $year): ?>
                 <li><a <?= $currentYear == $year ? 'aria-current="true"' : '' ?> href="/library/<?= $year ?>"><?= $year ?></a></li>
             <?php endforeach ?>
             </ul>
         </nav>
 </div>
+-->
+<?php $counter = 0; ?>
+<?php foreach($years as $year => $books): ?>
+    <section class="year">
+    <header>
+        <?= snippet('line-heading', ['level' => 2, 'text' => $year]) ?>
+        <span class="count">— <?= $books->count() ?> books</span>
+    </header>
 
     <div class="books grid">
+
     <?php foreach($books as $book): ?>
-        <article class="book flow" style="--flow-space: 0.6rem;">
+        <? $counter++ ?>
+        <article class="book flow" style="view-transition-class: 'book', view-transition-name: book-<?=$book->uid()?>;">
                 <?php if($image = $book->cover()->toFile()): ?>
-                    <picture>
+                <picture style="background-color: <?= $image->color()->dominantColor() ?>; background-size: cover; background-repeat: no-repeat; background-image: url('<?= $image->thumb(['width' => 30, 'quality' => 50, 'blur' => 10])->url() ?>');">
 
                     <source
                         srcset="<?= $image->srcset('book-webp') ?>"
@@ -28,15 +39,22 @@
                     >
                     <img
                         alt=""
-                        src="<?= $image->thumb(['width' => 300, 'quality' => 60])->url() ?>"
+                        src="<?= $image->thumb(['width' => 150, 'quality' => 60])->url() ?>"
                         srcset="<?= $image->srcset('book')?>"
-                    >
+                        width="<?= $image->thumb(['width' => 300])->width() ?>"
+                        <?= $counter >= 0 ? 'loading="lazy"' : '' ?>
+                >
+                    </picture>
                 <?php endif ?>
-            <h2 class="font-size-0"><?=$book->title()?></h2>
-            <p class="font-size--1"><?= $book->author() ?></p>
-            <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+                <div class="" >
+                    <h2 class="font-size-0"><?=$book->title()?></h2>
+                    <p class="font-size--1"><?= $book->author() ?></p>
+                    <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+                </div>
         </article>
     <?php endforeach ?>
-    </div>
+        </div>
+        </section>
+<?php endforeach ?>
 </div>
 

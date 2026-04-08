@@ -1,57 +1,71 @@
 @layer base {
   @font-face {
-    font-family: "Bergen Mono";
-    src: url("/assets/fonts/BergenMono/BergenMono-Bold.woff2") format("woff2");
+    font-family: "Petrona";
     font-weight: 800;
-  }
-
-  @font-face {
-    font-family: "Bergen Mono";
-    src: url("/assets/fonts/BergenMono/BergenMono-Regular.woff2")
-      format("woff2");
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: "Recursive";
-    src: url("/assets/fonts/recursive/recursive-variable-latin-basic.woff2")
-      format("woff2-variations");
-    font-weight: 300 1000;
-    unicode-range: U+0020-007F, U+00A3, U+00A9, U+20AC; /* Latin Basic plus £, €, &copy; */
-  }
-
-  @font-face {
-    font-family: "Recursive";
-    src: url("/assets/fonts/recursive/recursive-variable-latin-supplement.woff2")
-      format("woff2-variations");
-    font-weight: 300 1000;
-    unicode-range: U+A0-A2, U+A4-A8, U+AA-FF; /* https://jrgraphix.net/r/Unicode/00A0-00FF minus £, &copy */
-  }
-
-  @font-face {
-    font-family: "Recursive";
-    src: url("/assets/fonts/recursive/recursive-variable-latin-extended-a.woff2")
-      format("woff2-variations");
-    font-weight: 300 1000;
-    unicode-range: U+0100-017F; /* https://jrgraphix.net/r/Unicode/0100-017F */
-  }
-
-  @font-face {
-    font-family: "Inter";
-    font-weight: 100 900;
     font-display: swap;
     /* font-style: oblique 0deg 10deg; */
-    src: url("/assets/fonts/inter/Inter-Var-Roman-Latin.woff2?v=3.11")
+    src: url("/assets/fonts/petrona/Petrona-800-LatinBasic.woff2")
       format("woff2");
+    unicode-range: U+0020-007E, U+00A0-00FF;
+  }
+
+  @font-face {
+    font-family: "Petrona";
+    font-weight: 800;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/petrona/Petrona-800-LatinExt.woff2") format("woff2");
+    unicode-range: U+0100-0131, U+0134-017E;
+  }
+
+  @font-face {
+    font-family: "Fira Code Custom";
+    font-weight: 400 800;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/fira-code/FiraCode-Variable-LatinBasic.woff2")
+      format("woff2");
+    unicode-range: U+0020-007E, U+00A0-00FF;
+  }
+
+  @font-face {
+    font-family: "Fira Code Custom";
+    font-weight: 400 800;
+    font-display: swap;
+    /* font-style: oblique 0deg 10deg; */
+    src: url("/assets/fonts/fira-code/FiraCode-Variable-LatinExt.woff2")
+      format("woff2");
+    unicode-range: U+0100-0131, U+0134-017E;
+  }
+
+  @font-face {
+    font-family: "Adjusted Courier New Fallback";
+    src: local(Courier New);
+    size-adjust: 114%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: 19%;
+  }
+
+  @font-face {
+    font-family: "Adjusted Georgia Fallback";
+    src: local(Georgia);
+    size-adjust: 97%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: 2%;
   }
 
   :root {
-    --bg: #fff;
-    --fg: #000;
+    --white: #fff;
+    --black: #000;
+    --bg: var(--white);
+    --fg: var(--black);
     --primary: rgb(253, 100, 66);
-    --font-body: "Recursive";
-    --font-heading: "Inter"
-      /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    --font-body: "Fira Code Custom", "Adjusted Courier New Fallback", monospace;
+    --font-heading: "Petrona", "Adjusted Georgia Fallback", serif;
+    --font-heading-weight: 800;
+    /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
     --text-size--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
     --text-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
     --text-size-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
@@ -112,7 +126,7 @@
   h3,
   h4 {
     font-family: var(--font-heading);
-    font-weight: 800;
+    font-weight: var(--font-heading-weight);
     line-height: 1.3;
     margin-block-start: 0;
   }
@@ -172,7 +186,7 @@
   a {
     color: currentColor;
     text-decoration-color: var(--primary);
-    text-decoration-thickness: 0.3ex;
+    text-decoration-thickness: 0.25ex;
     text-underline-offset: 0.3ex;
   }
 
@@ -182,6 +196,26 @@
     outline-offset: 0;
     color: var(--focus-fg, var(--bg));
     text-decoration: none;
+  }
+
+  a:hover {
+    background: linear-gradient(
+      0deg,
+      transparent 0,
+      var(--primary) 0,
+      var(--primary) 25%,
+      transparent 25%
+    );
+  }
+
+  a:focus:hover {
+    background: linear-gradient(
+      0deg,
+      var(--fg) 0,
+      var(--primary) 0,
+      var(--primary) 25%,
+      var(--fg) 25%
+    );
   }
 
   .flow > * + * {
@@ -217,6 +251,27 @@
     max-width: 20ch;
   }
 
+  :is(h1, h2, h3, h4).line {
+    --gradient-offset: 0.27em;
+    background: linear-gradient(
+      0deg,
+      transparent var(--gradient-offset),
+      var(--fg) var(--gradient-offset),
+      var(--fg) calc(var(--gradient-offset) + 2px),
+      transparent calc(var(--gradient-offset) + 2px)
+    );
+    line-height: 1.1;
+    padding-inline-end: 0.2ch;
+    position: relative;
+  }
+
+  /* linear-gradient(0deg, transparent 0.7em, rgb(255 255 255 / 1) 0.7em, rgb(255 255 255 / 1) calc(0.7em + 2px), transparent calc(0.7em + 2px)) */
+
+  :is(h1, h2, h3, h4).line span {
+    background: var(--bg);
+    padding-inline-end: 0.2ch;
+  }
+
   h2,
   h3 {
     max-width: 44ch;
@@ -240,37 +295,56 @@
     font-feature-settings: "ss01", "ss02", "ss07", "ss08", "ss10", "ss11";
   }
 
+  dl {
+  }
+
+  dt {
+    text-transform: uppercase;
+    font-size: var(--text-size--1);
+    font-weight: 600;
+  }
+
+  dd {
+    font-size: var(--text-size-0);
+    margin-inline: 0;
+  }
+
   pre.hljs {
     font-family: "Bergen Mono", monospace;
-    background: #f6f6f6;
     font-size: var(--text-size--1);
     padding: var(--space-s);
     overflow: scroll;
-    border: 4px solid #e6e6e6;
   }
 
   code:not([data-language]) {
     font-size: var(--text-size--1);
     font-family: "Bergen Mono", monospace;
-    background: #f6f6f6;
-    outline: 2px solid #f6f6f6;
-    box-shadow: 0 0 0 4px #e6e6e6;
+    padding: 0.2ch 0.4ch;
   }
 
   nav a {
-    padding: 0 var(--space-3xs)
+    padding: 0 var(--space-3xs);
   }
 
   nav a[aria-current] {
-    background-color: var(--primary);
-    border: 3px solid var(--primary);
+    background-color: var(--fg);
+    border: 3px solid var(--fg);
+    color: var(--bg);
     text-decoration: none;
   }
 
-@view-transition {
-  navigation: auto;
-}
+  @view-transition {
+    navigation: auto;
+  }
 
-    
+  .js {
+    img[loading="lazy"] {
+      opacity: 0;
+    }
 
+    img[loading="lazy"].loaded.visible {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
+  }
 }

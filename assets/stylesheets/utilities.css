@@ -1,4 +1,23 @@
 @layer utilities {
+
+[hidden] {
+  display: none;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
   .font-size--2 {
     font-size: var(--text-size--2);
   }
@@ -31,4 +50,58 @@
   .font-bold {
     font-weight: 800;
   }
+
+  .color-red {
+     color: var(--red);
+  }
+
+  .color-bg-red {
+     background-color: var(--red);
+  }
+  
+  .color-bg-pink {
+     background-color: var(--pink);
+  }
+
+  .color-pink {
+     color: var(--pink);
+  }
+  .color-bg-blue {
+     background-color: var(--blue);
+  }
+
+  .color-blue {
+     color: var(--blue);
+  }
+
+  .color-bg-purple {
+     background-color: var(--purple);
+  }
+
+  .color-purple {
+     color: var(--purple);
+  }
+  .color-bg-khaki {
+     background-color: var(--khaki);
+  }
+
+  .color-khaki {
+     color: var(--khaki);
+  }
+  .color-bg-yellow {
+     background-color: var(--yellow);
+  }
+
+  .color-yellow {
+     color: var(--yellow);
+  }
+
+  .color-bg-green {
+     background-color: var(--green);
+  }
+
+  .color-green {
+     color: var(--green);
+  }
+
 }

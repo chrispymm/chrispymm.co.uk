@@ -11,6 +11,7 @@ return [
 
     ],
     'url' => '/',
+    'sylvainjule.colorextractor.mode' => 'both',
   's1syphos.highlight' => [
     'class' => 'hljs',
     'languages' => ['html', 'js', 'css', 'ruby', 'erb']
