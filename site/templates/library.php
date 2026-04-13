@@ -42,6 +42,7 @@
                         src="<?= $image->thumb(['width' => 150, 'quality' => 60])->url() ?>"
                         srcset="<?= $image->srcset('book')?>"
                         width="<?= $image->thumb(['width' => 300])->width() ?>"
+                        <?= $counter == 1 ? 'fetchpriority="high"' : '' ?>
                         <?= $counter >= 10 ? 'loading="lazy"' : '' ?>
                 >
                     </picture>

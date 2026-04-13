@@ -18,8 +18,8 @@
 @layer reset, base, layout, theme, utilities;
 </style>
 
-<link rel="preload" href="<?= cacheStamp('assets/fonts/fira-code/FiraCode-Variable-LatinBasic.woff2') ?>" type="font/woff2" as="font" crossorigin="">
-<link rel="preload" href="<?= cacheStamp('assets/fonts/petrona/Petrona-800-LatinBasic.woff2') ?>" type="font/woff2" as="font" crossorigin="">
+<link rel="preload" href="assets/fonts/fira-code/FiraCode-Variable-LatinBasic.woff2" type="font/woff2" as="font" crossorigin="">
+<link rel="preload" href="assets/fonts/petrona/Petrona-800-LatinBasic.woff2" type="font/woff2" as="font" crossorigin="">
 
 <?= css('assets/stylesheets/reset.css') ?>
 <?= css('assets/stylesheets/base.css') ?>
