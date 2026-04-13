@@ -34,6 +34,12 @@ columns:
             type: date
             display: 'YYYY-MM-DD'
             label: Completion Date
+          unfinished:
+            type: toggle
+            label: Unfinished
+            text:
+              - "no"
+              - "did not finish"
           rating:
             type: range
             label: Rating

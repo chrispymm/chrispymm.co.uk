@@ -50,7 +50,11 @@
                 <div class="" >
                     <h2 class="font-size-0"><?=$book->title()?></h2>
                     <p class="font-size--1"><?= $book->author() ?></p>
-                    <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+                    <?php if($book->unfinished()->toBool() === true): ?>
+                        <p class="font-size--1">DNF</p>
+                    <?php else: ?>
+                        <?php snippet('rating', ['rating' => (float) $book->rating()->value()]) ?>
+                    <?php endif ?>
                 </div>
         </article>
     <?php endforeach ?>
