@@ -1,0 +1,24 @@
+{
+  "name": "chrispymm.co.uk",
+  "version": "1.0.0",
+  "description": "<img src=\"http://getkirby.com/assets/images/github/plainkit.jpg\" width=\"300\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrispymm/chrispymm.co.uk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/chrispymm/chrispymm.co.uk/issues"
+  },
+  "homepage": "https://github.com/chrispymm/chrispymm.co.uk#readme",
+  "dependencies": {
+    "playwright": "^1.59.1"
+  }
+}
