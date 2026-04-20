@@ -29,9 +29,9 @@
 
     <?php foreach($books as $book): ?>
         <? $counter++ ?>
-        <article class="book flow" style="view-transition-class: 'book', view-transition-name: book-<?=$book->uid()?>;">
+        <article class="book flow" >
                 <?php if($image = $book->cover()->toFile()): ?>
-                <picture style="background-color: <?= $image->color()->dominantColor() ?>; background-size: cover; background-repeat: no-repeat; background-image: url('<?= $image->thumb(['width' => 30, 'quality' => 50, 'blur' => 10])->url() ?>');">
+                <picture style="view-transition-class: 'book-cover'; view-transition-name: book-<?=$book->uid()?>; background-color: <?= $image->color()->dominantColor() ?>; background-size: cover; background-repeat: no-repeat; background-image: url('<?= $image->thumb(['width' => 30, 'quality' => 50, 'blur' => 10])->url() ?>');">
 
                     <source
                         srcset="<?= $image->srcset('book-webp') ?>"
@@ -48,7 +48,13 @@
                     </picture>
                 <?php endif ?>
                 <div class="" >
-                    <h2 class="font-size-0"><?=$book->title()?></h2>
+                    <h2 class="font-size-0">
+                        <?php if($book->comments() != '' || $book->hasChildren()): ?>
+                            <a href="<?=$book->url() ?>"><?=$book->title()?></a>
+                        <?php else: ?>
+                            <?=$book->title()?>
+                        <?php endif ?>
+                    </h2>
                     <p class="font-size--1"><?= $book->author() ?></p>
                     <?php if($book->unfinished()->toBool() === true): ?>
                         <p class="font-size--1">DNF</p>

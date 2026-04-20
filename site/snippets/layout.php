@@ -13,7 +13,7 @@
         <?php snippet('header') ?>
 
         <main id="main" tabindex="-1">
-            <div id="content" class="center <?= $page->template() ?>">
+            <div id="content" class="center template-<?= $page->template() ?>">
 <?php if(isset($title)): ?>
                 <header class="page-title center">
                     <?php if(isset($pretitle)): ?>

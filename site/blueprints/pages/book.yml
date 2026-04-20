@@ -48,4 +48,10 @@ columns:
             max: 5
           comments:
             type: textarea
+          getBookHighlights:
+            type: janitor
+            command: getBookHighlights
+            progress: 'Processing…'
+            icon: 'pen'
+            label: Fetch book highlights
 

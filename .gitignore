@@ -1,6 +1,8 @@
 .DS_Store
 
 .env
+.amazon-session.json
+node_modules/
 
 /kirby
 /vendor

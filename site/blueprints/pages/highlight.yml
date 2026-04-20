@@ -1,0 +1,6 @@
+title: Highlight
+
+fields:
+  text:
+    type: textarea
+    label: Highlight
