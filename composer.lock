@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d7626335016d975ecaca012294e8929",
+    "content-hash": "b004e91a39cdf130624de3d4fe921c0f",
     "packages": [
         {
             "name": "bnomei/kirby3-dotenv",
@@ -80,16 +80,16 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "5.4.3",
+            "version": "4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby-janitor.git",
-                "reference": "f708fde4ff7bb9d12799f3f8605fb2bf743c866f"
+                "reference": "c48d5b1fd2e5974f48d9ba08476c62b070aa830e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby-janitor/zipball/f708fde4ff7bb9d12799f3f8605fb2bf743c866f",
-                "reference": "f708fde4ff7bb9d12799f3f8605fb2bf743c866f",
+                "url": "https://api.github.com/repos/bnomei/kirby-janitor/zipball/c48d5b1fd2e5974f48d9ba08476c62b070aa830e",
+                "reference": "c48d5b1fd2e5974f48d9ba08476c62b070aa830e",
                 "shasum": ""
             },
             "require": {
@@ -99,11 +99,12 @@
                 "symfony/finder": "^7.0"
             },
             "require-dev": {
-                "getkirby/cli": "^1.5.0",
-                "getkirby/cms": "5.0.0",
-                "larastan/larastan": "^v3.0.0",
+                "getkirby/cli": "dev-develop",
+                "getkirby/cms": "^4.3.0",
+                "larastan/larastan": "^2.9",
                 "laravel/pint": "^1.13",
-                "pestphp/pest": "^v3.5.1",
+                "pestphp/pest": "^2.24",
+                "pestphp/pest-plugin-type-coverage": "^2.4",
                 "spatie/ray": "^1.39"
             },
             "type": "kirby-plugin",
@@ -126,7 +127,7 @@
                 }
             ],
             "description": "Kirby Plugin for running commands like cleaning the cache from within the Panel, PHP code or a cronjob",
-            "homepage": "https://github.com/bnomei/kirby-janitor",
+            "homepage": "https://github.com/bnomei/kirby3-janitor",
             "keywords": [
                 "Tinker",
                 "backup",
@@ -148,9 +149,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby-janitor/issues",
-                "source": "https://github.com/bnomei/kirby-janitor/tree/v5.4.3"
+                "source": "https://github.com/bnomei/kirby-janitor/tree/v4.4.2"
             },
-            "time": "2025-09-17T17:40:03+00:00"
+            "time": "2024-09-12T12:55:01+00:00"
         },
         {
             "name": "christian-riesen/base32",
@@ -1996,7 +1997,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.34.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -2055,7 +2056,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -2162,7 +2163,7 @@
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.34.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -2223,7 +2224,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -2328,7 +2329,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.34.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -2388,7 +2389,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.36.0"
             },
             "funding": [
                 {

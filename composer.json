@@ -27,7 +27,7 @@
     "scriptotek/google-books": "^0.2.6",
     "sylvainjule/colorextractor": "^2.1",
     "getkirby/cli": "^1.5",
-    "bnomei/kirby-janitor": "^5.4",
+    "bnomei/kirby3-janitor": "^4.4",
     "bnomei/kirby3-dotenv": "^5.0",
     "sylvainallignol/cache-stamp": "^1.0"
   },
