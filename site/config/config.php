@@ -15,8 +15,8 @@ return [
         'class' => 'hljs',
         'languages' => ['html', 'js', 'css', 'ruby', 'erb']
     ],
-    'routes' => require_once('routes.php'),
-    'hooks' => require_once('hooks.php'),
-    'thumbs' => require_once('thumbs.php'),
+    'routes' => require('routes.php'),
+    'hooks' => require('hooks.php'),
+    'thumbs' => require('thumbs.php'),
 
 ];
