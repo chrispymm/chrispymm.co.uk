@@ -5,8 +5,8 @@ return [
         'basicAuth' => true,
         'allowInsecure' => true
     ],
-    'sylvainallignol.cache-stamp' => [
-        'active' => false,          // Enable/disable the plugin
+    'bvdputte.fingerprint' => [
+        'disabled' => true,
     ],
     'node' => '/Users/chris.pymm/.nvm/versions/node/v24.13.1/bin/node',
 ];
