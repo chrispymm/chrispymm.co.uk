@@ -1,4 +1,7 @@
 <?php 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
+
 use Scriptotek\GoogleBooks\GoogleBooks;
 return [
       'page.changeStatus:after' => function ($newPage,$oldPage) {
@@ -42,7 +45,7 @@ return [
             $providedAuthor = str_replace(' ', '+', $page->author());
             
             $gBooks = new GoogleBooks([
-                'key' => env('GOOGLE_BOOKS_API_KEY'),
+                'key' => $_ENV['GOOGLE_BOOKS_API_KEY'],
                 'maxResults' => 10,
             ]);
 
