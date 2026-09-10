@@ -7,8 +7,9 @@ node_modules/
 /kirby
 /vendor
 /content
-/media
 /site/cache
 /site/sessions
 /site/plugins
+/site/accounts
+
 
