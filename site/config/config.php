@@ -11,6 +11,15 @@ return [
         'allowInsecure' => true
     ],
     'sylvainjule.colorextractor.mode' => 'both',
+    'thathoff.git-content' => [
+        'buttons' => [
+            'reset' => true, // enables the reset to origin button (default: false)
+            'commit' => true, // enables the commit button (default: false)
+            'pull' => true, // enables the pull button (default: false)
+            'push' => true, // enables the push button (default: false)
+            'fetch' => false, // disables the fetch button (default: true)
+        ],
+    ],
     's1syphos.highlight' => [
         'class' => 'hljs',
         'languages' => ['html', 'js', 'css', 'ruby', 'erb']

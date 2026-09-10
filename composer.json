@@ -23,11 +23,11 @@
   },
   "require": {
     "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
-    "getkirby/cms": "^4.0",
+    "getkirby/cms": "^5.0",
     "scriptotek/google-books": "^0.2.6",
     "sylvainjule/colorextractor": "^2.1",
     "getkirby/cli": "^1.5",
-    "bnomei/kirby3-janitor": "^4.4",
+    "bnomei/kirby3-janitor": "^5.0",
     "bnomei/kirby3-dotenv": "^5.0",
     "bvdputte/kirby-fingerprint": "^2.2",
     "thathoff/kirby-git-content": "^5.4"
