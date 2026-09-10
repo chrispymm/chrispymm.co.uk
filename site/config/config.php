@@ -17,7 +17,7 @@ return [
             'commit' => true, // enables the commit button (default: false)
             'pull' => true, // enables the pull button (default: false)
             'push' => true, // enables the push button (default: false)
-            'fetch' => false, // disables the fetch button (default: true)
+            'fetch' => true, // disables the fetch button (default: true)
         ],
     ],
     's1syphos.highlight' => [
