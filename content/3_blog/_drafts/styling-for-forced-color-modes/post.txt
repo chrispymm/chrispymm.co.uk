@@ -1,9 +1,0 @@
-Title: Styling for forced color modes
-
-----
-
-Text: 
-
-----
-
-Uuid: sVfTaepda5cgqwVJ

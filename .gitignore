@@ -6,5 +6,6 @@ node_modules/
 
 /kirby
 /vendor
+/content
 /site/cache
 /site/sessions

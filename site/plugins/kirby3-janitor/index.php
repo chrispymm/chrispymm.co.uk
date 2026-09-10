@@ -29,7 +29,6 @@ Kirby::plugin('bnomei/janitor', [
         'janitor:backupzip' => require __DIR__.'/commands/backupzip.php',
         'janitor:call' => require __DIR__.'/commands/call.php',
         'janitor:cleancontent' => require __DIR__.'/commands/cleancontent.php',
-        'janitor:clear' => require __DIR__.'/commands/flush.php', // alias for flush
         'janitor:clipboard' => require __DIR__.'/commands/clipboard.php',
         'janitor:download' => require __DIR__.'/commands/download.php',
         'janitor:flush' => require __DIR__.'/commands/flush.php',
@@ -50,7 +49,7 @@ Kirby::plugin('bnomei/janitor', [
                 'autosave' => function ($doAutosave = false) {
                     return Janitor::isTrue($doAutosave);
                 },
-                'backgroundColor' => function ($style = '') {
+                'backgroundColor' => function ($style = 'var(--color-text)') {
                     return Janitor::query($style, $this->model());
                 },
                 'clipboard' => function ($clipboard = null) {
@@ -97,7 +96,7 @@ Kirby::plugin('bnomei/janitor', [
 
                     return Janitor::query($confirm, $this->model());
                 },
-                'color' => function ($style = '') {
+                'color' => function ($style = 'white') {
                     return Janitor::query($style, $this->model());
                 },
                 'cooldown' => function ($cooldownMilliseconds = null) {
@@ -120,11 +119,6 @@ Kirby::plugin('bnomei/janitor', [
                     return Janitor::query($label, $this->model());
                 },
                 'label' => function ($label = null) {
-                    $label = I18n::translate($label, $label, kirby()->user()?->language());
-
-                    return Janitor::query($label, $this->model());
-                },
-                'headline' => function ($label = null) {
                     $label = I18n::translate($label, $label, kirby()->user()?->language());
 
                     return Janitor::query($label, $this->model());

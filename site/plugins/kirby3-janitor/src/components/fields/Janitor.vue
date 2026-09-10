@@ -1,21 +1,22 @@
 <template>
-	<k-field
-		:label="button.headline || headline"
-		:help="button.help || help"
-		class="janitor-wrapper"
-	>
+	<div class="janitor-wrapper">
 		<k-button
 			:id="id"
-			:class="['k-button janitor', button.state]"
+			:class="['janitor', button.state]"
 			:icon="currentIcon"
 			:command="command"
 			:disabled="!unsaved && !isUnsaved && hasChanges"
 			:style="buttonStyle"
-			variant="filled"
 			@click="runJanitor"
 		>
 			{{ button.label || label }}
 		</k-button>
+		<k-text
+			v-if="button.help || help"
+			theme="help"
+			class="k-field-help"
+			:html="button.help || help"
+		/>
 		<a
 			v-show="downloadRequest"
 			ref="downloadAnchor"
@@ -30,7 +31,7 @@
 			:href="urlRequest"
 			target="_blank"
 		/>
-	</k-field>
+	</div>
 </template>
 
 <script>
@@ -50,7 +51,6 @@ export default {
 		intab: Boolean,
 		help: String,
 		label: String,
-		headline: String,
 		progress: String,
 		success: String,
 		status: String,
@@ -62,7 +62,6 @@ export default {
 			button: {
 				label: null,
 				state: null,
-				headline: null,
 				help: null,
 				style: null
 			},
@@ -99,23 +98,20 @@ export default {
 			);
 		},
 		hasChanges() {
-			return Object.keys(this.$panel.content.diff()).length > 0;
+			return this.$store.getters["content/hasChanges"]();
 		}
 	},
 
 	created() {
-		this.eventHandler = () =>
-			sessionStorage.getItem(STORAGE_ID) && location.reload();
-		window.panel.events.on("model.update", this.eventHandler);
+		this.$events.$on(
+			"model.update",
+			() => sessionStorage.getItem(STORAGE_ID) && location.reload()
+		);
 
 		if (sessionStorage.getItem(STORAGE_ID) === this.id) {
 			sessionStorage.removeItem(STORAGE_ID);
 			this.runJanitor();
 		}
-	},
-
-	unmounted() {
-		window.panel.events.off("model.update", this.eventHandler);
 	},
 
 	methods: {
@@ -146,8 +142,8 @@ export default {
 			if (this.autosave && this.hasChanges) {
 				// lock janitor button, press save and listen to `model.update` event
 				const saveButton = document.querySelector(
-					".k-panel .k-header-buttons .k-form-controls button:nth-child(2)"
-				);
+					".k-panel .k-form-buttons .k-view"
+				).lastChild;
 
 				// revert & save
 				if (saveButton) {
@@ -169,10 +165,7 @@ export default {
 				return;
 			}
 
-			await this.postRequest("plugin-janitor", {
-				command: this.command,
-				path: window.location.pathname
-			});
+			await this.postRequest("plugin-janitor", { command: this.command });
 		},
 
 		async postRequest(path, data) {
@@ -188,16 +181,12 @@ export default {
 				download,
 				clipboard,
 				success,
+				error,
 				icon,
-				headline,
 				help,
 				color,
 				backgroundColor,
-				resetStyle,
-				notification,
-				error,
-				warn,
-				log
+				resetStyle
 			} = await this.$api.post(path, data);
 
 			if (status === 200) {
@@ -218,10 +207,6 @@ export default {
 				this.button.help = help;
 			}
 
-			if (headline) {
-				this.button.headline = headline;
-			}
-
 			if (icon) {
 				this.icon = icon;
 			}
@@ -238,6 +223,7 @@ export default {
 						: "var(--color-negative-light)";
 			} else {
 				this.button.state = "has-response";
+				this.button.style.backgroundColor = "var(--color-text)";
 			}
 
 			if (color) {
@@ -254,25 +240,8 @@ export default {
 				this.button.style.reset = resetStyle;
 			}
 
-			if (notification) {
-				let [f, m] = notification;
-				window.panel.notification[f](m);
-			}
-
-			if (error) {
-				console.error(error);
-			}
-
-			if (warn) {
-				console.warn(warn);
-			}
-
-			if (log) {
-				console.log(log);
-			}
-
 			if (reload) {
-				setTimeout(() => location.reload(), this.cooldown || 0);
+				location.reload();
 			}
 
 			if (open) {
@@ -304,7 +273,7 @@ export default {
 					this.copyToClipboard(this.clipboardRequest);
 				});
 			} else {
-				setTimeout(this.resetButton, this.cooldown || 2000);
+				setTimeout(this.resetButton, this.cooldown);
 			}
 		},
 
@@ -326,32 +295,11 @@ export default {
 			element.dispatchEvent(evt);
 		},
 
-		copyToClipboardWithTextarea(content) {
-			const textArea = document.createElement("textarea");
-			textArea.value = content;
-			textArea.style.position = "absolute";
-			textArea.style.left = "-999999px";
-			document.body.prepend(textArea);
-			textArea.select();
-			try {
-				if (document.execCommand("copy") === false) {
-					console.error(
-						"Using `navigator.clipboard` did not work most likely due to the Kirby Panel running on localhost or no https. Janitor then tried to copy with a textarea but that failed as well."
-					);
-				}
-			} catch (error) {
-				console.error(error);
-			} finally {
-				textArea.remove();
-			}
-		},
-
 		async copyToClipboard(content) {
 			try {
 				await navigator.clipboard.writeText(content);
-			} catch (error) {
-				console.error(error);
-				this.copyToClipboardWithTextarea(content);
+			} catch (err) {
+				console.error("navigator.clipboard is not available");
 			}
 		}
 	}
@@ -359,12 +307,31 @@ export default {
 </script>
 
 <style>
+.janitor {
+	background-color: var(--color-text);
+	color: white;
+	border-radius: 3px;
+	padding: 0.5rem 1rem;
+	line-height: 1.25rem;
+	text-align: left;
+}
+
+.janitor:hover {
+	background-color: #222;
+}
+
+.janitor .k-button-text {
+	opacity: 1;
+}
+
 .janitor.is-running {
+	background-color: var(--color-border) !important;
+	color: white;
 	cursor: wait;
 }
 
 .janitor[aria-disabled="true"] {
-	cursor: not-allowed;
+	background-color: var(--color-border) !important;
 }
 
 .visually-hidden {

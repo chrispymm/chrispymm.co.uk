@@ -1,13 +1,12 @@
 # Kirby Janitor
 
-[![Kirby 5](https://flat.badgen.net/badge/Kirby/5?color=ECC748)](https://getkirby.com)
-![PHP 8.2](https://flat.badgen.net/badge/PHP/8.2?color=4E5B93&icon=php&label)
-![Release](https://flat.badgen.net/packagist/v/bnomei/kirby-janitor?color=ae81ff&icon=github&label)
-[![Discord](https://flat.badgen.net/badge/discord/bnomei?color=7289da&icon=discord&label)](https://discordapp.com/users/bnomei)
-[![Buymecoffee](https://flat.badgen.net/badge/icon/donate?icon=buymeacoffee&color=FF813F&label)](https://www.buymeacoffee.com/bnomei)
+![Release](https://flat.badgen.net/packagist/v/bnomei/kirby3-janitor?color=ae81ff)
+![Downloads](https://flat.badgen.net/packagist/dt/bnomei/kirby3-janitor?color=272822)
+[![Coverage](https://flat.badgen.net/codeclimate/coverage/bnomei/kirby3-janitor)](https://flat.badgen.net/codeclimate/coverage/bnomei/kirby3-janitor)
+[![Maintainability](https://flat.badgen.net/codeclimate/maintainability/bnomei/kirby3-janitor)](https://codeclimate.com/github/bnomei/kirby3-janitor)
+[![Discord](https://flat.badgen.net/badge/discord/bnomei?color=7289da)](https://discordapp.com/users/bnomei)
 
-
-Janitor is a Kirby CMS Plugin for running commands.
+Kirby Plugin for running commands.
 
 - It is a Panel Button!
 - It has commands built-in for cleaning the cache, sessions, create zip-backup, pre-generate thumbs, open URLs, refresh the current Panel page and more.
@@ -19,11 +18,25 @@ Janitor is a Kirby CMS Plugin for running commands.
 You have to use composer to install both the plugin and the CLI locally into your project:
 
 ```bash
-composer require getkirby/cli bnomei/kirby-janitor
+composer require getkirby/cli bnomei/kirby3-janitor
 ```
 
 > [!WARNING]
 > You need to install the CLI with composer into your project and not use the global version. Since Janitor depends on the CLI to be available, installing only the janitor plugin via submodules or via ZIP is NOT supported.
+
+## Commercial Usage
+
+> <br>
+> <b>Support open source!</b><br><br>
+> This plugin is free but if you use it in a commercial project please consider to sponsor me or make a donation.<br>
+> If my work helped you to make some cash it seems fair to me that I might get a little reward as well, right?<br><br>
+> Be kind. Share a little. Thanks.<br><br>
+> &dash; Bruno<br>
+> &nbsp;
+
+| M | O | N | E | Y |
+|---|----|---|---|---|
+| [Github sponsor](https://github.com/sponsors/bnomei) | [Patreon](https://patreon.com/bnomei) | [Buy Me a Coffee](https://buymeacoff.ee/bnomei) | [Paypal dontation](https://www.paypal.me/bnomei/15) | [Hire me](mailto:b@bnomei.com?subject=Kirby) |
 
 ## Setup
 
@@ -43,7 +56,7 @@ fields:
 
 Janitor will automatically fill in the current model.
 
-- The `--model` argument will have the UUID or ID of the current model. You can use `janitor()->model($cli->arg('model'))` to get the object.
+- The `--model` argument will have the UUID or ID of the current model. You can use `janitor()->model($cli->arg('model))` to get the object.
 - But if for example you press the panel button on a page you will have `--page` argument set to the UUID or ID of that page. Use `$cli->kirby()->page($cli->arg('page'))` to get the object.
 - If you call it on a file view then `--file` arg will be set. Use `$cli->kirby()->file($cli->arg('file'))` to get the object.
 - On a panel user view... `--user`. Use `$cli->kirby()->user($cli->arg('user'))` to get the object.
@@ -77,24 +90,6 @@ return [
     }
 ];
 
-```
-
-### View Buttons
-
-You can also use Janitor to create custom [view buttons](https://getkirby.com/releases/5/view-buttons#custom-vue-component).
-
-**site/blueprints/page/default.yml**
-```yml
-buttons:
-  myCommand:
-    component: k-janitor-view-button
-    props:
-      command: whistle
-      label: Whistle
-      icon: audio
-  open: true
-  preview: true
-  settings: true
 ```
 
 ### Callback
@@ -135,7 +130,7 @@ The `$model` will match the model of whatever page, file, user or site object yo
 
 ### Built in commands and examples
 
-This plugin comes with a [few commands](https://github.com/bnomei/kirby-janitor/tree/master/commands) you might like to use yourself and some [example commands](https://github.com/bnomei/kirby-janitor/tree/master/tests/site/commands) used to showcase the various options the button has (like how to change the icon or open a URL in a new tab). Some commands can be used in both panel and terminal. Others are limited in their use to either one of them. In the terminal you can use `--help` argument to view the help for each command.
+This plugin comes with a [few commands](https://github.com/bnomei/kirby3-janitor/tree/master/commands) you might like to use yourself and some [example commands](https://github.com/bnomei/kirby3-janitor/tree/master/tests/site/commands) used to showcase the various options the button has (like how to change the icon or open a URL in a new tab). Some commands can be used in both panel and terminal. Others are limited in their use to either one of them. In the terminal you can use `--help` argument to view the help for each command.
 
 - `janitor:backupzip`, creates a backup zip
 - `janitor:call`, calls a method on the current model with optional data parameter
@@ -152,13 +147,13 @@ This plugin comes with a [few commands](https://github.com/bnomei/kirby-janitor/
 - `janitor:thumbs`, process thumb jobs of a certain page or all pages
 - `janitor:tinker`, run a REPL session in terminal
 - `janitor:trash`, removes an entry from given cache by key or page (default: pages cache)
-- `janitor:undertaker`, backups a page and its subpages to a zip. You need to manually trigger it with a [hook](https://github.com/bnomei/kirby-janitor/blob/master/tests/site/config/config.php).
+- `janitor:undertaker`, backups a page and its subpages to a zip. You need to manually trigger it with a [hook](https://github.com/bnomei/kirby3-janitor/blob/master/tests/site/config/config.php).
 
 The plugin will register these commands starting with `janitor:*` automatically - no copying required.<br>But if you want to re-use any of the other example provided you need to copy them to your `site/commands`-folder
 
 ### Blueprint field options
 
-The button you create with the `field: janitor` in your blueprint can be configured to do various things. Checkout the [example default.yml blueprint](https://github.com/bnomei/kirby-janitor/blob/master/tests/site/blueprints/pages/default.yml) to familiarize yourself with how to use it.
+The button you create with the `field: janitor` in your blueprint can be configured to do various things. Checkout the [example default.yml blueprint](https://github.com/bnomei/kirby3-janitor/blob/master/tests/site/blueprints/pages/default.yml) to familiarize yourself with how to use it.
 
 - `autosave`, if `true` then save before pressing the button
 - `backgroundColor`, sets backgroundColor of button
@@ -166,8 +161,7 @@ The button you create with the `field: janitor` in your blueprint can be configu
 - `confirm`, sets text for confirmation after clicking the button and before executing the command, can prevent the execution of the command if the user clicks `cancel` in the OS dialog
 - `command`, command like you would enter it in terminal, with [query language support](https://getkirby.com/docs/guide/blueprints/query-language) and page/file/user/site/data arguments
 - `cooldown`, time in milliseconds the message is flashed on the button (default: 2000)
-- `error`, set message on button to show on all **non-200**-status returns with query language support, also will print to `console.error()`
-- `headline`, set headline of the button, use `headline: " "` for better alignment with custom `width`s
+- `error`, set message to show on all **non-200**-status returns with query language support
 - `help`, set help of the button
 - `icon`, set the [icon](https://getkirby.com/docs/reference/panel/icons) of the button
 - `intab`, if `true` then use in combination with the `open`-option to open an URL in a new tab
@@ -184,15 +178,11 @@ In either the command or the callback you will be setting/returning data to the 
 - `clipboard`, string to copy to clipboard
 - `color`, see `color`-field option
 - `download`, URL to start downloading
-- `error`, see `error`-field option, print to `console.error()`
-- `warn`, print to `console.warn()`
-- `log`, print to `console.log()`
-- `headline`, see `help`-field option
+- `error`, see `error`-field option
 - `help`, see `help`-field option
 - `icon`, see `icon`-field option
 - `label`, see `label`-field option
 - `message`, see `message`-field option
-- `notification`, array of method and message, like `['success', 'Deployed!']`
 - `open`, URL to open, use with `intab`-field option to open in a new tab
 - `reload`, if `true` will reload panel view once api call is received
 - `success`, see `success`-field option
@@ -200,7 +190,7 @@ In either the command or the callback you will be setting/returning data to the 
 
 ### Examples
 
-Again... check out the [built-in commands](https://github.com/bnomei/kirby-janitor/tree/master/commands) and plugin [example commands](https://github.com/bnomei/kirby-janitor/tree/master/tests/site/commands) to learn how to use the field and api options yourself.
+Again... check out the [built-in commands](https://github.com/bnomei/kirby3-janitor/tree/master/commands) and plugin [example commands](https://github.com/bnomei/kirby3-janitor/tree/master/tests/site/commands) to learn how to use the field and api options yourself.
 
 ```yml
 test_ping:
@@ -384,7 +374,7 @@ wget https://dev.bnomei.com/plugin-janitor/e9fe51f94eadabf54/janitor%3Abackupzip
 curl -s https://dev.bnomei.com/plugin-janitor/e9fe51f94eadabf54/janitor%3Abackupzip > /dev/null
 ```
 
-Are you having issues with PHP bin and cron? [read this](https://github.com/bnomei/kirby-janitor/issues/105).
+Are you having issues with PHP bin and cron? [read this](https://github.com/bnomei/kirby3-janitor/issues/105).
 
 #### Kirby CLI (installed with composer)
 
@@ -425,10 +415,6 @@ return [
 
 You can also overwrite the maintenance snippet if you create your own and store it as `site/snippets/maintenance.php`.
 
-## Tinker(well), REPL and Debugging
-
-You can use the `kirby janitor:tinker` command to start a REPL session in the terminal. This is a great way to test code snippets, debug and explore your Kirby installation. Another alternative would be using the [Tinkerwell App](https://tinkerwell.app/) which has built-in support for Kirby as long as it can find the `./kirby/bootstrap.php` file via the matching [driver](https://github.com/beyondcode/tinkerwell/blob/58254e11a6aad428eefd63b1ae624b0568414227/src/Drivers/KirbyTinkerwellDriver.php#L14). 
-
 ## Dependencies
 
 - [Kirby CLI](https://github.com/getkirby/cli)
@@ -437,7 +423,7 @@ You can use the `kirby janitor:tinker` command to start a REPL session in the te
 
 ## Disclaimer
 
-This plugin is provided "as is" with no guarantee. Use it at your own risk and always test it yourself before using it in a production environment. If you find any issues, please [create a new issue](https://github.com/bnomei/kirby-janitor/issues/new).
+This plugin is provided "as is" with no guarantee. Use it at your own risk and always test it yourself before using it in a production environment. If you find any issues, please [create a new issue](https://github.com/bnomei/kirby3-janitor/issues/new).
 
 ## License
 
