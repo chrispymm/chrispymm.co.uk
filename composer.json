@@ -29,7 +29,8 @@
     "getkirby/cli": "^1.5",
     "bnomei/kirby3-janitor": "^4.4",
     "bnomei/kirby3-dotenv": "^5.0",
-    "bvdputte/kirby-fingerprint": "^2.2"
+    "bvdputte/kirby-fingerprint": "^2.2",
+    "thathoff/kirby-git-content": "^5.4"
   },
   "config": {
     "allow-plugins": {
