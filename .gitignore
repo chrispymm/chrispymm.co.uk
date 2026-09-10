@@ -9,3 +9,5 @@ node_modules/
 /content
 /site/cache
 /site/sessions
+/site/plugins
+
