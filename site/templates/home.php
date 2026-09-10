@@ -22,12 +22,13 @@
 
 <section class="latest flow">
     <?= snippet('line-heading', ['level' => 2, 'text' => 'Latest']) ?>
-    <div class="grid">
+    <div class="grid grid--fit">
         <div class="flow latest__card">
             <h3 class="">Coffee</h3>
             <!-- <p><?= $latestBrew->method() ?></p> -->
             <?php snippet('coffee-card', ['coffee' => $latestBrew->coffee()->toPage(), 'rating' => false]) ?>
         </div>
+        <?php if ($latestBook): ?>
         <div class="flow latest__card">
             <h3 class="">Book</h3>
             <div class="cluster">
@@ -40,6 +41,7 @@
                 </div>
             </div>
         </div>
+        <?php endif ?>
     </div>
 </section>
 

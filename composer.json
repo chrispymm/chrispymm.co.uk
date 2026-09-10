@@ -30,7 +30,8 @@
     "bnomei/kirby3-janitor": "^5.0",
     "bnomei/kirby3-dotenv": "^5.0",
     "bvdputte/kirby-fingerprint": "^2.2",
-    "thathoff/kirby-git-content": "^5.4"
+    "thathoff/kirby-git-content": "^5.4",
+    "fabianmichael/kirby-markdown-field": "^4.0"
   },
   "config": {
     "allow-plugins": {

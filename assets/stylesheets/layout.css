@@ -19,12 +19,17 @@
 
   .grid {
     --grid-cell-min-width: 200px;
+    --grid-fit-fill: auto-fill;
     display: grid;
     grid-gap: var(--space-s);
     grid-template-columns: repeat(
-      auto-fill,
+      var(--grid-fit-fill, auto-fill),
       minmax(min(var(--grid-cell-min-width), 100%), 1fr)
     );
+  }
+
+  .grid--fit {
+    --grid-fit-fill: auto-fit;
   }
 
   .grid-col-span-full {

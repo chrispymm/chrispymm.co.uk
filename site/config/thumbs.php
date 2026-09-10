@@ -1,5 +1,6 @@
 <?php
 return [
+    'driver' => 'imagick',
     'srcsets' => [
         'book' => [
             '1x'  => ['width' => 300, 'quality' => 60 ],
