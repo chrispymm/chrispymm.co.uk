@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Deployer locks the remote deploy path, so only let one deploy run at a time.
+# In-progress deploys are allowed to finish rather than being cancelled midway.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://chrispymm.co.uk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: deployphp/action@v1
+        with:
+          dep: deploy
+          # Pinned to match the deployer/deployer version in composer.json.
+          # deploy.php uses named arguments that need Deployer 8.
+          deployer-version: 8.0.5
+          private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+          known-hosts: |
+            65.108.60.153 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAB5UIOqvGgd7oBdjS0W9ze7cUiz+qMT3ESxN+Qz3q21
