@@ -39,6 +39,26 @@ set('shared_group', 'deployhq');
 // Deployer to chmod or setfacl on each release.
 set('writable_dirs', []);
 
+// Name releases after their deploy time (UTC) rather than Deployer's default
+// incrementing integer, matching the existing releases on the server. Deployer
+// tracks releases in .dep/releases_log, so rollback and cleanup are unaffected.
+// The suffix only comes into play if two deploys land in the same second, which
+// would otherwise abort the deploy with a "release name already exists" error.
+set('release_name', function () {
+    $name = gmdate('YmdHis');
+
+    return within('{{deploy_path}}', function () use ($name) {
+        $candidate = $name;
+        $suffix = 1;
+
+        while (test("[ -d releases/$candidate ]")) {
+            $candidate = $name . '-' . $suffix++;
+        }
+
+        return $candidate;
+    });
+});
+
 host('chrispymm.co.uk')
     ->set('hostname', '65.108.60.153')
     ->set('remote_user', 'chrispymm')
