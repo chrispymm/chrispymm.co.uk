@@ -27,7 +27,7 @@ return [
                 ], true);
                 
                 // Update the field on the page
-                $page->update([
+                $page = $page->update([
                     'logo' => Data::encode([$file->filename()], 'yaml')
                 ]);
             }
@@ -62,7 +62,7 @@ return [
             }
     
             if($coverUrl) {
-                $page->update(['debug' => $page->debug() . ' * ' . $coverUrl]);
+               $page = $page->update(['debug' => $page->debug() . ' * ' . $coverUrl]);
                $response = Remote::get($coverUrl);
                 if ($response->code() === 200) {
                     // Write the file to a temp path
@@ -78,7 +78,7 @@ return [
                     'filename' => $filename,
                 ], true);
                 // Update the field on the page
-                $page->update([
+                $page = $page->update([
                     'cover' => Data::encode([$file->filename()], 'yaml'),
                     'author' => $author,
                 ]);
