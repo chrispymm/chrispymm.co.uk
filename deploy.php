@@ -91,6 +91,17 @@ task('deploy:npm', function () {
     run('npm install --omit=dev --no-audit --no-fund', timeout: 600);
 });
 
+// The release is checked out as chrispymm:chrispymm, but php-fpm runs as
+// `ploi`. Both users are members of `deployhq`, so give the whole release tree
+// that group (and setgid on directories) once all files are in place, letting
+// Kirby write to caches/logs/etc. that live inside the release itself.
+desc('Sets the shared group on the release so php-fpm (ploi) can write to it');
+task('deploy:permissions', function () {
+    run('chgrp -R {{shared_group}} {{release_path}}');
+    run("find {{release_path}} -type d -exec chmod g+ws {} +");
+    run("find {{release_path}} -type f -exec chmod g+w {} +");
+});
+
 desc('Ensures the Kirby scheduler cron entry is installed');
 task('deploy:cron:kirby-scheduler', function () {
     $cronLine = '* * * * * cd {{current_path}} && php ./vendor/bin/kirby schedule:run >> /dev/null 2>&1';
@@ -104,6 +115,7 @@ task('deploy', [
     'deploy:kirby:shared',
     'deploy:vendors',
     'deploy:npm',
+    'deploy:permissions',
     'deploy:publish',
     'deploy:cron:kirby-scheduler',
 ]);
