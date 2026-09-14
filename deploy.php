@@ -91,6 +91,13 @@ task('deploy:npm', function () {
     run('npm install --omit=dev --no-audit --no-fund', timeout: 600);
 });
 
+desc('Ensures the Kirby scheduler cron entry is installed');
+task('deploy:cron:kirby-scheduler', function () {
+    $cronLine = '* * * * * cd {{current_path}} && php ./vendor/bin/kirby schedule:run >> /dev/null 2>&1';
+
+    run("if crontab -l 2>/dev/null | grep -Fqx '$cronLine'; then exit 0; fi; (crontab -l 2>/dev/null; echo '$cronLine') | crontab -");
+});
+
 desc('Deploys the site');
 task('deploy', [
     'deploy:prepare',
@@ -98,6 +105,7 @@ task('deploy', [
     'deploy:vendors',
     'deploy:npm',
     'deploy:publish',
+    'deploy:cron:kirby-scheduler',
 ]);
 
 after('deploy:failed', 'deploy:unlock');

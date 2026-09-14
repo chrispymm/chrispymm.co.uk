@@ -31,7 +31,8 @@
     "bnomei/kirby3-dotenv": "^5.0",
     "bvdputte/kirby-fingerprint": "^2.2",
     "thathoff/kirby-git-content": "^5.4",
-    "fabianmichael/kirby-markdown-field": "^4.0"
+    "fabianmichael/kirby-markdown-field": "^4.0",
+    "beebmx/kirby-scheduler": "^1.0"
   },
   "config": {
     "allow-plugins": {
