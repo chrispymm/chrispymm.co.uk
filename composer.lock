@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3832176b12d1ee1e93ece27f083b2fdd",
+    "content-hash": "d9bfd1fa01d2b7de062106b992e4e17a",
     "packages": [
         {
             "name": "beebmx/kirby-scheduler",
@@ -2457,6 +2457,59 @@
             "time": "2026-07-04T20:38:24+00:00"
         },
         {
+            "name": "johannschopplich/kirby-highlighter",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johannschopplich/kirby-highlighter.git",
+                "reference": "223962f389dce0920048a46fe6806f95ce3fe828"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-highlighter/zipball/223962f389dce0920048a46fe6806f95ce3fe828",
+                "reference": "223962f389dce0920048a46fe6806f95ce3fe828",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "scrivo/highlight.php": "^9.18"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "@stable",
+                "getkirby/cms": "^4",
+                "phpunit/phpunit": "^11.1"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": "tests/fixtures/kirby"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "hello@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                }
+            ],
+            "description": "Server-side syntax highlighting for Kirby CMS",
+            "homepage": "https://github.com/johannschopplich/kirby-highlighter#readme",
+            "keywords": [
+                "highlight",
+                "highlighter",
+                "hljs",
+                "kirby"
+            ],
+            "support": {
+                "issues": "https://github.com/johannschopplich/kirby-highlighter/issues",
+                "source": "https://github.com/johannschopplich/kirby-highlighter/tree/v3.2.0"
+            },
+            "abandoned": true,
+            "time": "2024-07-19T08:41:49+00:00"
+        },
+        {
             "name": "laminas/laminas-escaper",
             "version": "2.18.0",
             "source": {
@@ -3511,47 +3564,6 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
-        },
-        {
-            "name": "s1syphos/kirby3-highlight",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/S1SYPHOS/kirby3-highlight.git",
-                "reference": "6e097b1e3ece508d3591b3a43e0ec15f39575b50"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/S1SYPHOS/kirby3-highlight/zipball/6e097b1e3ece508d3591b3a43e0ec15f39575b50",
-                "reference": "6e097b1e3ece508d3591b3a43e0ec15f39575b50",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.1",
-                "scrivo/highlight.php": "^9.15"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14"
-            },
-            "type": "kirby-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Martin Folkers",
-                    "homepage": "https://twobrain.io",
-                    "role": "Project Author"
-                }
-            ],
-            "description": "Themeable server-side syntax highlighting for Kirby v3",
-            "support": {
-                "issues": "https://github.com/S1SYPHOS/kirby3-highlight/issues",
-                "source": "https://github.com/S1SYPHOS/kirby3-highlight/tree/1.0.0"
-            },
-            "abandoned": true,
-            "time": "2019-03-18T18:09:22+00:00"
         },
         {
             "name": "scriptotek/google-books",

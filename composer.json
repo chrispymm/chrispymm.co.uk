@@ -33,14 +33,17 @@
     "thathoff/kirby-git-content": "^5.4",
     "fabianmichael/kirby-markdown-field": "^4.0",
     "beebmx/kirby-scheduler": "^1.0",
-    "s1syphos/kirby3-highlight": "^1.0"
+    "johannschopplich/kirby-highlighter": "^3.2"
   },
   "config": {
     "allow-plugins": {
       "getkirby/composer-installer": true
     },
     "audit": {
-        "block-insecure": false
+        "block-insecure": false,
+        "ignore-abandoned": [
+            "johannschopplich/kirby-highlighter"
+        ]
     },
     "optimize-autoloader": true
   },
