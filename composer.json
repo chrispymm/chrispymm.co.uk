@@ -32,7 +32,8 @@
     "bvdputte/kirby-fingerprint": "^2.2",
     "thathoff/kirby-git-content": "^5.4",
     "fabianmichael/kirby-markdown-field": "^4.0",
-    "beebmx/kirby-scheduler": "^1.0"
+    "beebmx/kirby-scheduler": "^1.0",
+    "s1syphos/kirby3-highlight": "^1.0"
   },
   "config": {
     "allow-plugins": {
