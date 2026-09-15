@@ -1,4 +1,6 @@
 <?php
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
 return [
     'debug'  => false,
     'api' => [
@@ -9,7 +11,7 @@ return [
         'schedule' => function (\Beebmx\KirbScheduler\Schedule $schedule) {
             $schedule->call(function () {
                 $url = rtrim(kirby()->site()->url(), '/') . '/git-content/push';
-                $secret = getenv('GIT_CONTENT_CRON_HOOKS_SECRET');
+                $secret = $_ENV['GIT_CONTENT_CRON_HOOKS_SECRET'];
 
                 if ($secret) {
                     $url .= '?secret=' . urlencode($secret);
