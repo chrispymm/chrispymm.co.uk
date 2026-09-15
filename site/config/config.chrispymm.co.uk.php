@@ -27,7 +27,7 @@ return [
 
                 curl_exec($ch);
                 curl_close($ch);
-            })->daily()->at('02:00');
+            })->hourly();
         },
     ],
     'node' => '/usr/bin/node'
